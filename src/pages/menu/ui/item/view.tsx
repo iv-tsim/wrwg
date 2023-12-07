@@ -1,7 +1,7 @@
-import { TPlanetNameDirection } from '../../model'
 import { Typography } from '@/shared/ui'
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
+import { TPlanetNameDirection } from '@/entities'
 import cn from 'classnames'
 
 import css from './styles.module.scss'
