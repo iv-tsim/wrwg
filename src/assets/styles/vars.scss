@@ -1,0 +1,37 @@
+body {
+	// background vars
+	--color-background-file: #fff;
+	--color-background-primary: #000;
+	--color-background-popup: rgb(33 33 33 / 80%);
+
+	// text vars
+	--color-text-primary: #171717;
+	--color-text-secondary: #fff;
+	--color-text-disabled: #3c3c3c;
+	--color-text-tertiary: #f33;
+	--color-text-white-grey: #d9d9d9;
+	--color-text-p: #696969;
+	--color-text-correct-answer: #696969;
+
+	// elements vars
+	--color-elements-disabled: #696969;
+	--color-elements-tertiary: #f33;
+	--color-elements-white-grey: #d9d9d9;
+	--color-elements-background-opacity: rgb(6 4 4 / 40%);
+	--color-elements-background-stroke: rgb(255 255 255 / 40%);
+	--color-elements-start-back: rgb(60 60 60 / 40%);
+	--color-elements-secondary: #fff;
+	--color-elements-stroke-blue-grey: #d5dde3;
+	--color-elements-primary: #000;
+	--color-elements-disable-dark: #3c3c3c;
+	--color-elements-circle-planet: #c3a17a;
+	--color-elements-circle-ship: #92c4ff;
+	--color-elements-photo-disable: rgb(255 255 255 / 30%);
+	--color-elements-correct-answer: #0f971d;
+	--color-elements-correct-answer-background: rgb(15 151 29 / 3%);
+	--color-elements-wrong-answer-background: rgb(255 51 51 / 3%);
+
+	// fonts
+	--font-octos: 'TT Octosquares Trl Cmd', 'Arial', sans-serif;
+	--font-roboto: 'Roboto', 'Arial', sans-serif;
+}

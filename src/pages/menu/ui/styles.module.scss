@@ -1,0 +1,63 @@
+.wrapper {
+	position: relative;
+
+	&__header {
+		position: absolute;
+		top: 0;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		width: 100%;
+		padding-top: 30px;
+	}
+
+	&__bottom {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		padding-bottom: 18px;
+	}
+
+	&__list {
+		display: flex;
+		list-style: none;
+	}
+
+	&__item {
+		&:not(:last-child) {
+			margin-right: 30px;
+		}
+	}
+
+	&__link {
+		text-decoration: none;
+	}
+}
+
+.item {
+	position: absolute;
+
+	&_mercury {
+		top: 18.5%;
+		left: 176px;
+	}
+
+	&_mars {
+		top: 25.9%;
+		right: 30px;
+		max-width: 741px;
+		text-align: right;
+	}
+
+	&_venus {
+		bottom: 33.2%;
+		left: 30px;
+	}
+
+	&_jupiter {
+		right: 146px;
+		bottom: 16.6%;
+	}
+}

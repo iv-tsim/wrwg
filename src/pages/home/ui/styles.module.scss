@@ -1,0 +1,61 @@
+.home {
+	position: relative;
+
+	&__header,
+	&__footer {
+		position: absolute;
+		left: 0;
+		width: 100%;
+	}
+
+	&__header {
+		top: 0;
+	}
+
+	&__footer {
+		bottom: 0;
+	}
+
+	&__earth {
+		position: absolute;
+		top: calc(100% - 100px);
+		right: 28%;
+	}
+
+	&__sun {
+		position: absolute;
+		top: 27%;
+		left: 36.6%;
+		width: 371px;
+	}
+
+	&__planet {
+		position: absolute !important;
+
+		&_name {
+			&_mercury {
+				top: 48%;
+				right: 31.6%;
+				width: 74px;
+			}
+
+			&_mars {
+				top: 17.8%;
+				right: 12.9%;
+				width: 155px;
+			}
+
+			&_venus {
+				bottom: 24.5%;
+				left: 26.8%;
+				width: 88px;
+			}
+
+			&_jupiter {
+				top: 9.6%;
+				left: 7.3%;
+				width: 250px;
+			}
+		}
+	}
+}

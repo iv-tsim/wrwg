@@ -1,0 +1,45 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+
+	outline: none;
+
+	-webkit-tap-highlight-color: transparent;
+}
+
+a {
+	color: inherit;
+}
+
+button,
+input {
+	font-family: inherit;
+}
+
+body {
+	position: relative;
+
+	min-width: 360px;
+
+	font-family: var(--font-octos);
+	color: var(--color-text-secondary);
+
+	background-color: #000;
+}
+
+#root {
+	position: relative;
+
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+
+	min-height: calc(var(--vh) * 100);
+	padding-right: var(--root-offset-right);
+}
+
+.container {
+	padding-right: 30px;
+	padding-left: 30px;
+}

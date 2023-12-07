@@ -1,0 +1,66 @@
+.button {
+	$p: &;
+
+	cursor: pointer;
+
+	display: flex;
+	align-items: center;
+
+	appearance: none;
+	background: none;
+	border: none;
+
+	&:hover,
+	&:active {
+		#{$p} {
+			&__icon {
+				fill: var(--color-elements-white-grey);
+			}
+
+			&__text {
+				color: var(--color-text-white-grey);
+			}
+		}
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+
+		#{$p} {
+			&__icon {
+				fill: var(--color-elements-disabled);
+			}
+
+			&__text {
+				color: var(--color-text-disabled);
+			}
+		}
+	}
+
+	&__icon {
+		@include media(xxl) {
+			width: vw(21);
+			height: vw(9);
+			margin-right: vw(11);
+		}
+
+		@include media(xl) {
+			width: 21px;
+			height: 9px;
+			margin-right: 11px;
+		}
+
+		width: 21px;
+		height: 9px;
+		margin-right: 11px;
+
+		fill: var(--color-elements-secondary);
+
+		transition: 0.3s fill;
+	}
+
+	&__text {
+		color: var(--color-text-secondary);
+		transition: 0.3s color;
+	}
+}

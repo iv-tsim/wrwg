@@ -1,0 +1,115 @@
+.border {
+	$p: &;
+
+	@include media(xxl) {
+		width: vw(150);
+		min-height: vw(389);
+		border-width: vw(2);
+	}
+
+	@include media(xl) {
+		width: 111px;
+		min-height: 292px;
+		border-width: 2px;
+	}
+
+	@include media(sm) {
+		width: 60px;
+		min-height: 200px;
+	}
+
+	position: relative;
+	width: 150px;
+	min-height: 389px;
+	border: 2px solid var(--color-elements-background-stroke);
+
+	#{$p} {
+		&__dec,
+		&__optional {
+			position: absolute;
+		}
+	}
+
+	&_position {
+		&_left {
+			border-right: none;
+
+			#{$p} {
+				&__dec {
+					@include media(xxl) {
+						bottom: vw(10);
+						left: vw(10);
+						width: vw(49);
+					}
+
+					@include media(xl) {
+						bottom: 8px;
+						left: 10px;
+						width: 36px;
+					}
+
+					@include media(sm) {
+						bottom: 6px;
+						left: 11px;
+						width: 32px;
+					}
+
+					bottom: 10px;
+					left: 20px;
+					width: 49px;
+				}
+
+				&__optional {
+					@include media(xxl) {
+						top: vw(20);
+						left: vw(20);
+					}
+
+					@include media(xl) {
+						top: 15px;
+						left: 15px;
+					}
+
+					@include media(sm) {
+						top: 12px;
+						left: 12px;
+					}
+
+					top: 20px;
+					left: 20px;
+				}
+			}
+		}
+
+		&_right {
+			border-left: none;
+
+			#{$p} {
+				&__dec {
+					@include media(xxl) {
+						top: vw(23);
+						left: vw(50);
+						width: vw(35);
+					}
+
+					@include media(xl) {
+						top: 17px;
+						left: 37px;
+						width: 26px;
+					}
+
+					@include media(sm) {
+						top: 12px;
+						right: 12px;
+						left: auto;
+						width: 22px;
+					}
+
+					top: 23px;
+					left: 50px;
+					width: 35px;
+				}
+			}
+		}
+	}
+}

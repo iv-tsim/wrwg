@@ -1,0 +1,45 @@
+.team {
+	$p: &;
+
+	@include media(xxl) {
+		width: vw(310);
+	}
+
+	width: 310px;
+	text-align: center;
+
+	&_size {
+		&_big {
+			#{$p} {
+				&__img {
+					@include media(xxl) {
+						width: vw(300);
+					}
+
+					width: 300px;
+				}
+			}
+		}
+	}
+
+	&__img {
+		@include media(xxl) {
+			width: vw(108);
+		}
+
+		width: 108px;
+		margin-bottom: 20px;
+		transition: 0.6s width;
+	}
+
+	&__name {
+		@include media(xxl) {
+			max-width: vw(163);
+		}
+
+		width: 100%;
+		max-width: 163px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}

@@ -1,0 +1,395 @@
+.typography {
+	&_variant {
+		&_h1 {
+			@include media(xxl) {
+				font-size: vw(38);
+				letter-spacing: vw(4.37);
+			}
+
+			@include media(xl) {
+				font-size: 28px;
+				letter-spacing: 3.22px;
+			}
+
+			font-size: 38px;
+			font-weight: 400;
+			font-style: normal;
+			line-height: 100%;
+			text-transform: uppercase;
+			letter-spacing: 4.37px;
+		}
+
+		&_h1_2 {
+			@include media(xxl) {
+				font-size: vw(90);
+				letter-spacing: vw(10.35);
+			}
+
+			@include media(xl) {
+				font-size: 66px;
+				letter-spacing: 7.59px;
+			}
+
+			@include media(sm) {
+				font-size: 42px;
+				letter-spacing: 4.83px;
+			}
+
+			font-size: 90px;
+			font-weight: 400;
+			font-style: normal;
+			line-height: 112%;
+			text-transform: uppercase;
+			letter-spacing: 10.35px;
+		}
+
+		&_h2 {
+			@include media(xxl) {
+				font-size: vw(28);
+				letter-spacing: vw(3.22);
+			}
+
+			@include media(xl) {
+				font-size: 18px;
+				letter-spacing: 2.07px;
+			}
+
+			font-size: 28px;
+			font-weight: 400;
+			font-style: normal;
+			line-height: 100%;
+			text-transform: uppercase;
+			letter-spacing: 3.22px;
+		}
+
+		&_bigfont {
+			@include media(xxl) {
+				font-size: vw(28);
+				letter-spacing: vw(3.22);
+			}
+
+			@include media(xl) {
+				font-size: 18px;
+				letter-spacing: 2.07px;
+			}
+
+			@include media(lg) {
+				font-size: 16px;
+				letter-spacing: 1.84px;
+			}
+
+			@include media(sm) {
+				font-size: 14px;
+				letter-spacing: 1.61px;
+			}
+
+			font-size: 28px;
+			font-weight: 400;
+			font-style: normal;
+			line-height: 100%;
+			text-transform: uppercase;
+			letter-spacing: 3.22px;
+		}
+
+		&_menuitem {
+			@include media(xxl) {
+				font-size: vw(100);
+				letter-spacing: vw(11.5);
+			}
+
+			@include media(xl) {
+				font-size: 75px;
+				letter-spacing: 8.625px;
+			}
+
+			@include media(lg) {
+				font-size: 54px;
+				letter-spacing: 6.21px;
+			}
+
+			@include media(sm) {
+				font-size: 38px;
+				letter-spacing: 4.37px;
+			}
+
+			font-size: 100px;
+			font-weight: 400;
+			font-style: normal;
+			line-height: 100%;
+			text-transform: uppercase;
+			letter-spacing: 11.5px;
+		}
+
+		&_menu {
+			@include media(xxl) {
+				font-size: vw(18);
+				letter-spacing: vw(2.07);
+			}
+
+			@include media(xl) {
+				font-size: 14px;
+				letter-spacing: 1.61px;
+			}
+
+			@include media(lg) {
+				font-size: 12px;
+				letter-spacing: 1.38px;
+			}
+
+			@include media(sm) {
+				font-size: 10px;
+				letter-spacing: 1.15px;
+			}
+
+			font-size: 18px;
+			font-weight: 400;
+			font-style: normal;
+			line-height: 100%;
+			text-transform: uppercase;
+			letter-spacing: 2.07px;
+		}
+
+		&_text {
+			@include media(xxl) {
+				font-size: vw(16);
+			}
+
+			@include media(xl) {
+				font-size: 14px;
+			}
+
+			@include media(sm) {
+				font-size: 12px;
+			}
+
+			font-family: var(--font-roboto);
+			font-size: 16px;
+			font-weight: 300;
+			font-style: normal;
+			line-height: 130%;
+		}
+
+		&_boldText {
+			@include media(xxl) {
+				font-size: vw(16);
+			}
+
+			@include media(xl) {
+				font-size: 14px;
+			}
+
+			@include media(sm) {
+				font-size: 12px;
+			}
+
+			font-family: var(--font-roboto);
+			font-size: 16px;
+			font-weight: 400;
+			font-style: normal;
+			line-height: 130%;
+		}
+
+		&_smallText {
+			@include media(xxl) {
+				font-size: vw(14);
+			}
+
+			@include media(xl) {
+				font-size: 12px;
+			}
+
+			font-family: var(--font-roboto);
+			font-size: 14px;
+			font-weight: 300;
+			font-style: normal;
+			line-height: 130%;
+		}
+
+		&_desc {
+			@include media(xxl) {
+				font-size: vw(16);
+				letter-spacing: vw(1.84);
+			}
+
+			@include media(xl) {
+				font-size: 12px;
+			}
+
+			font-size: 16px;
+			font-weight: 400;
+			font-style: normal;
+			line-height: 100%;
+			text-transform: uppercase;
+			letter-spacing: 1.84px;
+		}
+
+		&_timer {
+			@include media(xxl) {
+				font-size: vw(16);
+			}
+
+			@include media(xl) {
+				font-size: 14px;
+			}
+
+			@include media(sm) {
+				font-size: 12px;
+			}
+
+			font-family: var(--font-roboto);
+			font-size: 16px;
+			font-weight: 700;
+			font-style: normal;
+			line-height: 150%;
+		}
+
+		&_shipname {
+			@include media(xxl) {
+				font-size: vw(18);
+				letter-spacing: vw(2.07);
+			}
+
+			@include media(xl) {
+				font-size: 14px;
+				letter-spacing: 1.61px;
+			}
+
+			@include media(sm) {
+				font-size: 12px;
+				letter-spacing: 1.38px;
+			}
+
+			font-size: 18px;
+			font-weight: 400;
+			font-style: normal;
+			line-height: 100%;
+			text-transform: uppercase;
+			letter-spacing: 2.07px;
+		}
+
+		&_stars {
+			@include media(xxl) {
+				font-size: vw(60);
+				letter-spacing: vw(6.9);
+			}
+
+			@include media(xl) {
+				font-size: 45px;
+				letter-spacing: 5.175px;
+			}
+
+			@include media(lg) {
+				font-size: 36px;
+				letter-spacing: 4.14px;
+			}
+
+			@include media(sm) {
+				font-size: 30px;
+				letter-spacing: 3.45px;
+			}
+
+			font-size: 60px;
+			font-weight: 400;
+			font-style: normal;
+			line-height: 100%;
+			text-transform: uppercase;
+			letter-spacing: 6.9px;
+		}
+
+		&_number {
+			@include media(xxl) {
+				font-size: vw(40);
+				letter-spacing: vw(4.6);
+			}
+
+			@include media(xl) {
+				font-size: 30px;
+				letter-spacing: 3.45px;
+			}
+
+			@include media(lg) {
+				font-size: 24px;
+				letter-spacing: 2.76px;
+			}
+
+			font-size: 40px;
+			font-weight: 400;
+			font-style: normal;
+			line-height: 100%;
+			text-transform: uppercase;
+			letter-spacing: 4.6px;
+		}
+
+		&_bigplanetname {
+			@include media(xxl) {
+				font-size: vw(58);
+				letter-spacing: vw(6.67);
+			}
+
+			@include media(xl) {
+				font-size: 42px;
+				letter-spacing: 4.83px;
+			}
+
+			@include media(lg) {
+				font-size: 30px;
+				letter-spacing: 3.45px;
+			}
+
+			@include media(sm) {
+				font-size: 22px;
+				letter-spacing: 2.53px;
+			}
+
+			font-size: 58px;
+			font-weight: 400;
+			font-style: normal;
+			line-height: 100%;
+			text-transform: uppercase;
+			letter-spacing: 6.67px;
+		}
+
+		&_likes {
+			@include media(xxl) {
+				font-size: vw(34);
+				letter-spacing: vw(3.91);
+			}
+
+			@include media(xl) {
+				font-size: 26px;
+				letter-spacing: 2.99px;
+			}
+
+			@include media(lg) {
+				font-size: 18px;
+				letter-spacing: 2.07px;
+			}
+
+			font-size: 34px;
+			font-weight: 400;
+			font-style: normal;
+			line-height: 100%;
+			text-transform: uppercase;
+			letter-spacing: 3.91px;
+		}
+
+		&_user {
+			@include media(xxl) {
+				font-size: vw(16);
+				letter-spacing: vw(1.84);
+			}
+
+			@include media(xl) {
+				font-size: 14px;
+				letter-spacing: 1.61px;
+			}
+
+			font-size: 16px;
+			font-weight: 400;
+			font-style: normal;
+			line-height: 100%;
+			text-transform: uppercase;
+			letter-spacing: 1.84px;
+		}
+	}
+}

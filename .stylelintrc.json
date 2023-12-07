@@ -1,0 +1,12 @@
+{
+	"extends": [
+		"stylelint-config-standard-scss",
+		"stylelint-config-clean-order",
+		"stylelint-prettier/recommended"
+	],
+	"plugins": ["stylelint-order"],
+	"rules": {
+		"scss/at-extend-no-missing-placeholder": null
+	}
+}
+

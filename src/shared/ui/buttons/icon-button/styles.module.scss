@@ -1,0 +1,219 @@
+.button {
+	$p: &;
+
+	@include media(sm) {
+		text-align: center;
+	}
+
+	cursor: pointer;
+
+	display: flex;
+	align-items: center;
+
+	background: none;
+	border: none;
+
+	&:hover,
+	&:active {
+		#{$p} {
+			&__img {
+				fill: var(--color-elements-white-grey);
+			}
+
+			&__text {
+				color: var(--color-text-white-grey);
+			}
+
+			&__line {
+				border-color: var(--color-elements-white-grey);
+			}
+		}
+	}
+
+	&_icon {
+		&_with {
+			#{$p} {
+				&__icon {
+					@include media(xxl) {
+						padding: vw(1);
+					}
+
+					padding: 1px;
+				}
+
+				&__img {
+					@include media(xxl) {
+						width: vw(38);
+						height: vw(38);
+					}
+
+					@include media(xl) {
+						width: 28px;
+						height: 28px;
+					}
+
+					width: 38px;
+					height: 38px;
+					fill: var(--color-elements-secondary);
+					transition: 0.3s fill;
+				}
+			}
+		}
+
+		&_without {
+			#{$p} {
+				&__icon {
+					@include media(xxl) {
+						padding: vw(3);
+					}
+
+					padding: 3px;
+				}
+
+				&__img {
+					@include media(xxl) {
+						width: vw(34);
+						height: vw(34);
+					}
+
+					@include media(xl) {
+						width: 24px;
+						height: 24px;
+					}
+
+					width: 34px;
+					height: 34px;
+				}
+			}
+		}
+	}
+
+	&_direction {
+		&_default {
+			@include media(sm) {
+				flex-direction: column;
+			}
+
+			#{$p} {
+				&__icon {
+					@include media(xxl) {
+						margin-right: vw(16);
+					}
+
+					@include media(xl) {
+						margin-right: 10px;
+					}
+
+					@include media(sm) {
+						margin-right: 0;
+						margin-bottom: 10px;
+					}
+
+					margin-right: 16px;
+				}
+			}
+		}
+
+		&_reversed {
+			@include media(sm) {
+				flex-direction: column;
+			}
+
+			flex-direction: row-reverse;
+
+			#{$p} {
+				&__icon {
+					@include media(xxl) {
+						margin-left: vw(16);
+					}
+
+					@include media(xl) {
+						margin-left: 10px;
+					}
+
+					@include media(sm) {
+						margin-bottom: 10px;
+						margin-left: 0;
+					}
+
+					margin-left: 16px;
+				}
+			}
+		}
+	}
+
+	&__line {
+		position: absolute;
+		display: block;
+		border-color: var(--color-elements-secondary);
+		transition: 0.3s border-color;
+
+		&_orientation {
+			&_horizontal {
+				@include media(xxl) {
+					width: vw(28);
+				}
+
+				@include media(xl) {
+					width: 21px;
+				}
+
+				left: 50%;
+				transform: translateX(-50%);
+
+				width: 28px;
+
+				border-top-style: solid;
+				border-top-width: 1px;
+			}
+
+			&_vertical {
+				@include media(xxl) {
+					height: vw(28);
+				}
+
+				@include media(xl) {
+					height: 21px;
+				}
+
+				top: 50%;
+				transform: translateY(-50%);
+
+				height: 28px;
+
+				border-left-style: solid;
+				border-left-width: 1px;
+			}
+		}
+
+		&_position {
+			&_top {
+				top: 0;
+			}
+
+			&_right {
+				right: 0;
+			}
+
+			&_bottom {
+				bottom: 0;
+			}
+
+			&_left {
+				left: 0;
+			}
+		}
+	}
+
+	&__icon {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__text {
+		color: var(--color-text-secondary);
+		transition: 0.3s color;
+	}
+}

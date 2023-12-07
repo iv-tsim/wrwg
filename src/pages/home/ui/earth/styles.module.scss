@@ -1,0 +1,19 @@
+.earth {
+	@include media(xxl) {
+		width: vw(782);
+	}
+
+	width: 782px;
+
+	&__planet {
+		display: block;
+		width: 100%;
+	}
+
+	&__orbit {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 175%;
+	}
+}

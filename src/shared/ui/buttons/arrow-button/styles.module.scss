@@ -1,0 +1,59 @@
+.button {
+	$p: &;
+
+	cursor: pointer;
+	appearance: none;
+	background: none;
+	border: none;
+
+	&:hover,
+	&:active {
+		#{$p} {
+			&__icon {
+				fill: transparent;
+			}
+		}
+	}
+
+	&:disabled {
+		#{$p} {
+			&__icon {
+				fill: transparent;
+				stroke: var(--color-elements-disabled);
+			}
+		}
+	}
+
+	&_direction {
+		&_right {
+			transform: rotate(180deg);
+		}
+	}
+
+	&__icon {
+		@include media(xxl) {
+			width: vw(36);
+			height: vw(118);
+		}
+
+		@include media(xl) {
+			width: 27px;
+			height: 88px;
+		}
+
+		@include media(sm) {
+			width: 15px;
+			height: 48px;
+		}
+
+		width: 36px;
+		height: 118px;
+
+		fill: var(--color-elements-secondary);
+		stroke: var(--color-elements-secondary);
+
+		transition:
+			0.3s stroke,
+			0.3s fill;
+	}
+}

@@ -1,0 +1,22 @@
+.wrapper {
+	&__text {
+		margin-bottom: 50px;
+		text-align: center;
+	}
+
+	&__input {
+		margin-bottom: 60px;
+	}
+
+	&__bottom {
+		display: flex;
+	}
+
+	&__cancel {
+		margin-right: 30px;
+	}
+
+	&__submit {
+		flex-grow: 1;
+	}
+}

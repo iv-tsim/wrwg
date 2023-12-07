@@ -1,0 +1,256 @@
+.button {
+	$p: &;
+
+	@include media(xxl) {
+		min-width: vw(300);
+		min-height: vw(120);
+		padding: vw(18) vw(35);
+	}
+
+	@include media(xl) {
+		min-width: 175px;
+		min-height: 70px;
+		padding: 10px 20px;
+	}
+
+	cursor: pointer;
+
+	display: flex;
+	flex-direction: column;
+
+	min-width: 300px;
+	min-height: 120px;
+	padding: 18px 35px;
+
+	appearance: none;
+	background: none;
+	background-color: var(--color-elements-tertiary);
+	background-image: url('../../../../assets/img/button/background_light_button.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	border: none;
+
+	transition:
+		0.3s background-color,
+		0.3s transform;
+
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 0.7;
+	}
+
+	&:not(&:disabled) {
+		&:hover,
+		&:active {
+			transform: scale(0.9);
+			background-color: var(--color-elements-secondary);
+		}
+	}
+
+	&__main {
+		@include media(xxl) {
+			padding: 0 vw(13);
+		}
+
+		@include media(xl) {
+			padding: 0 8px;
+		}
+
+		position: relative;
+
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+
+		width: 100%;
+		padding: 0 13px;
+	}
+
+	&__inner {
+		position: relative;
+
+		display: flex;
+		flex-grow: 1;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__line {
+		@include media(xxl) {
+			border-right-width: vw(3);
+		}
+
+		@include media(xl) {
+			border-right-width: 2px;
+		}
+
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+
+		height: 100%;
+
+		border-right: 3px solid var(--color-elements-primary);
+
+		&_position {
+			&_left {
+				left: 0;
+			}
+
+			&_right {
+				right: 0;
+			}
+		}
+	}
+
+	&__corner {
+		@include media(xxl) {
+			width: vw(16);
+		}
+
+		@include media(xl) {
+			width: 9px;
+		}
+
+		position: absolute;
+		display: block;
+		width: 16px;
+
+		&_position {
+			&_topLeft {
+				top: 0;
+				left: 0;
+			}
+
+			&_topRight {
+				top: 0;
+				right: 0;
+				transform: rotate(90deg);
+			}
+
+			&_bottomLeft {
+				bottom: 0;
+				left: 0;
+				transform: rotate(-90deg);
+			}
+
+			&_bottomRight {
+				right: 0;
+				bottom: 0;
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	&__text {
+		@include media(xxl) {
+			font-size: vw(8);
+			letter-spacing: vw(0.92);
+		}
+
+		@include media(xl) {
+			font-size: 5px;
+			letter-spacing: 0.575px;
+		}
+
+		position: absolute;
+
+		font-size: 8px;
+		font-weight: 400;
+		font-style: normal;
+		line-height: normal;
+		color: var(--color-elements-primary);
+		text-transform: uppercase;
+		letter-spacing: 0.92px;
+
+		&_position {
+			&_topLeft {
+				@include media(xxl) {
+					top: vw(16);
+					left: vw(8);
+				}
+
+				@include media(xl) {
+					top: 10px;
+					left: 5px;
+				}
+
+				top: 16px;
+				left: 8px;
+			}
+
+			&_topRight {
+				@include media(xxl) {
+					top: vw(16);
+					right: vw(4);
+				}
+
+				@include media(xl) {
+					top: 10px;
+					right: 2px;
+				}
+
+				top: 16px;
+				right: 4px;
+			}
+
+			&_bottomLeft {
+				@include media(xxl) {
+					bottom: vw(8);
+					left: vw(43);
+				}
+
+				@include media(xl) {
+					bottom: 4px;
+					left: 25px;
+				}
+
+				bottom: 8px;
+				left: 43px;
+			}
+
+			&_bottomRight {
+				@include media(xxl) {
+					right: vw(36);
+					bottom: vw(8);
+				}
+
+				@include media(xl) {
+					right: 21px;
+					bottom: 4px;
+				}
+
+				right: 36px;
+				bottom: 8px;
+			}
+		}
+	}
+
+	&__content {
+		@include media(xxl) {
+			font-size: vw(28);
+			letter-spacing: vw(3.22);
+		}
+
+		@include media(xl) {
+			font-size: 16px;
+			letter-spacing: 1.84px;
+		}
+
+		@include media(sm) {
+			font-size: 14px;
+		}
+
+		position: relative;
+		z-index: 1;
+
+		font-size: 28px;
+		font-weight: 400;
+		font-style: normal;
+		line-height: 100%;
+		color: var(--color-text-primary);
+		text-transform: uppercase;
+		letter-spacing: 3.22px;
+	}
+}

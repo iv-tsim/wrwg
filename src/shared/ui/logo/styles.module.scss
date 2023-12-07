@@ -1,0 +1,16 @@
+.link {
+	&__logo {
+		@include media(xxl) {
+			width: vw(64);
+			height: vw(49);
+		}
+
+		@include media(xl) {
+			width: 52px;
+			height: 40px;
+		}
+
+		width: 64px;
+		height: 49px;
+	}
+}

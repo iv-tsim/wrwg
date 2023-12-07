@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  woerwag.grechka.digital:
+    build:
+      context: ./
+    environment:
+      NODE_ENV: development
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.woerwag.rule=Host(`woerwag.grechka.digital`)"
+      - "traefik.http.routers.woerwag.middlewares=auth"
+      - "traefik.http.middlewares.auth.basicauth.users=11:$$2y$$10$$.SECB956TZozGhwgDqWPHOZI1irr/DMegk.sdiPbkKj38UlqfSz3W"
+
+networks:
+  default:
+      external: true
+      name: grechka-proxy

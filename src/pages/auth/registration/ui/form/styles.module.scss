@@ -1,0 +1,52 @@
+.wrapper {
+	@include media(xxl) {
+		padding: 0 vw(120);
+	}
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 120px;
+
+	&__circle {
+		position: relative;
+	}
+
+	&__team {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	&__left,
+	&__right {
+		flex-grow: 1;
+	}
+
+	&__left {
+		@include media(xxl) {
+			margin-right: vw(105);
+		}
+
+		margin-right: 105px;
+	}
+
+	&__right {
+		@include media(xxl) {
+			margin-left: vw(105);
+		}
+
+		margin-left: 105px;
+	}
+
+	&__input {
+		&:not(:last-child) {
+			@include media(xxl) {
+				margin-bottom: vw(60);
+			}
+
+			margin-bottom: 60px;
+		}
+	}
+}
