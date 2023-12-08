@@ -4,10 +4,10 @@ import cn from 'classnames'
 
 import css from './styles.module.scss'
 
-export interface IArrowButtonProps
-	extends Omit<TDefaultButtonProps, 'children'> {
-	direction?: 'left' | 'right'
+export interface Props extends InputHTMLAttributes<HTMLInputElement> {
+
 }
+
 
 export const ArrowButton: FC<IArrowButtonProps> = ({
 	className,

@@ -10,6 +10,8 @@ interface IPasswordSetResponse {
 	detail: string
 }
 
+api.auth.passwordSet(data)
+
 const passwordSet = async (data: IPasswordSetRequest) => {
 	const response = await commonApi.post<IPasswordSetResponse>(
 		'/password_set/',

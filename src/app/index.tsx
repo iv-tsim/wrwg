@@ -1,18 +1,30 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { App } from './App'
-import { ToastContainer } from 'react-toastify'
-import { QueryClientWrapper } from './ui/react-query/view'
+import { updateDeviceProps } from '@/shared/helpers'
+import { router } from '@/shared/lib'
+import { useEffect } from 'react'
+import { RouterProvider } from 'react-router-dom'
+import { useTokenVerify } from './api'
+import { useAuth } from '@/entities'
 
-import 'react-toastify/dist/ReactToastify.css'
-import '@assets/styles/index.scss'
+export const App = withProviders(() => {
+	const loginUser = useAuth(state => state.logIn)
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-	<React.StrictMode>
-		<QueryClientWrapper>
-			<App />
-			<ToastContainer position='bottom-right' theme='dark' />
-		</QueryClientWrapper>
-	</React.StrictMode>
-)
+	const { isFetching, isLoading, isSuccess } = useTokenVerify()
 
+	useEffect(() => {
+		updateDeviceProps()
+
+		window.addEventListener('resize', updateDeviceProps)
+
+		return () => {
+			window.removeEventListener('resize', updateDeviceProps)
+		}
+	}, [])
+
+	if (isFetching || isLoading) return null
+
+	if (isSuccess) {
+		loginUser()
+	}
+
+	return <RouterProvider router={router} />
+})
