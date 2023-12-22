@@ -3,6 +3,14 @@
 		width: vw(555);
 	}
 
+	@include media(xl) {
+		width: 416px;
+	}
+
+	@include media(sm) {
+		width: 278px;
+	}
+
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -16,6 +24,14 @@
 	&__triangle {
 		@include media(xxl) {
 			border-width: 0 vw(15) vw(30);
+		}
+
+		@include media(xl) {
+			border-width: 0 11px 22px;
+		}
+
+		@include media(sm) {
+			border-width: 0 8px 16px;
 		}
 
 		pointer-events: none;
@@ -36,44 +52,68 @@
 		}
 
 		&_position {
-			&_topLeft {
+			&_top {
 				@include media(xxl) {
 					top: vw(136);
-					left: vw(-22);
+				}
+
+				@include media(xl) {
+					top: 102px;
+				}
+
+				@include media(sm) {
+					top: 69px;
 				}
 
 				top: 136px;
-				left: -22px;
 			}
 
-			&_topRight {
-				@include media(xxl) {
-					top: vw(136);
-					right: vw(-22);
-				}
-
-				top: 136px;
-				right: -22px;
-			}
-
-			&_bottomLeft {
+			&_bottom {
 				@include media(xxl) {
 					bottom: vw(136);
+				}
+
+				@include media(xl) {
+					bottom: 102px;
+				}
+
+				@include media(sm) {
+					bottom: 69px;
+				}
+
+				bottom: 136px;
+			}
+
+			&_left {
+				@include media(xxl) {
 					left: vw(-22);
 				}
 
-				bottom: 136px;
+				@include media(xl) {
+					left: -16px;
+				}
+
+				@include media(sm) {
+					left: -11px;
+				}
+
 				left: -22px;
 			}
 
-			&_bottomRight {
+			&_right {
 				@include media(xxl) {
 					right: vw(-22);
-					bottom: vw(136);
+				}
+
+				@include media(xl) {
+					right: -16px;
+				}
+
+				@include media(sm) {
+					right: -11px;
 				}
 
 				right: -22px;
-				bottom: 136px;
 			}
 		}
 	}

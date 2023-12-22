@@ -1,5 +1,6 @@
-import type { ElementType, PropsWithChildren } from 'react'
 import cn from 'classnames'
+
+import type { ElementType, PropsWithChildren } from 'react'
 
 import css from './styles.module.scss'
 
@@ -67,4 +68,3 @@ export const Typography = <T extends ElementType = 'div'>({
 		</Component>
 	)
 }
-

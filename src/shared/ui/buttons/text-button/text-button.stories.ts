@@ -1,11 +1,11 @@
+import { TextButton } from './'
+
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ITextButtonProps } from './'
 
-import { TextButton } from './'
-
 const meta: Meta<ITextButtonProps> = {
 	component: TextButton,
-	title: 'UI/buttons/TextButton',
+	title: 'UI/buttons/text-button',
 	tags: ['autodocs'],
 }
 
@@ -20,7 +20,7 @@ export const Default: Story = {
 	name: 'default',
 }
 
-export const DefaultDisabled: Story = {
+export const Disabled: Story = {
 	args: {
 		children: 'Button',
 		disabled: true,
@@ -28,7 +28,7 @@ export const DefaultDisabled: Story = {
 	name: 'default/disabled',
 }
 
-export const DefaultWithIcon: Story = {
+export const WithIcon: Story = {
 	args: {
 		iconId: 'arrow-back',
 		children: 'Button',
@@ -36,7 +36,7 @@ export const DefaultWithIcon: Story = {
 	name: 'default/with-icon',
 }
 
-export const DefaultWithIconDisabled: Story = {
+export const WithIconDisabled: Story = {
 	args: {
 		iconId: 'arrow-back',
 		children: 'Button',

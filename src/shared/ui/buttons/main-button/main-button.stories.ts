@@ -1,11 +1,11 @@
+import { MainButton } from './'
+
 import type { Meta, StoryObj } from '@storybook/react'
 import type { IMainButtonProps } from './'
 
-import { MainButton } from './'
-
 const meta: Meta<IMainButtonProps> = {
 	component: MainButton,
-	title: 'UI/buttons/MainButton',
+	title: 'UI/buttons/main-button',
 	tags: ['autodocs'],
 }
 
@@ -18,7 +18,7 @@ export const Dark: Story = {
 		variant: 'dark',
 		children: 'Button',
 	},
-	name: 'dark',
+	name: 'variant-dark',
 }
 
 export const DarkDisabled: Story = {
@@ -27,7 +27,7 @@ export const DarkDisabled: Story = {
 		children: 'Button',
 		disabled: true,
 	},
-	name: 'dark/disabled',
+	name: 'variant-dark/disabled',
 }
 
 export const Primary: Story = {
@@ -35,7 +35,7 @@ export const Primary: Story = {
 		variant: 'primary',
 		children: 'Button',
 	},
-	name: 'primary',
+	name: 'variant-primary',
 }
 
 export const PrimaryDisabled: Story = {
@@ -44,7 +44,7 @@ export const PrimaryDisabled: Story = {
 		children: 'Button',
 		disabled: true,
 	},
-	name: 'primary/disabled',
+	name: 'variant-primary/disabled',
 }
 
 export const Secondary: Story = {
@@ -52,7 +52,7 @@ export const Secondary: Story = {
 		variant: 'secondary',
 		children: 'Button',
 	},
-	name: 'secondary',
+	name: 'variant-secondary',
 }
 
 export const SecondaryDisabled: Story = {
@@ -61,23 +61,39 @@ export const SecondaryDisabled: Story = {
 		children: 'Button',
 		disabled: true,
 	},
-	name: 'secondary/disabled',
+	name: 'variant-secondary/disabled',
 }
 
-export const Transparent: Story = {
+export const TransparentLight: Story = {
 	args: {
-		variant: 'transparent',
+		variant: 'transparent-light',
 		children: 'Button',
 	},
-	name: 'transparent',
+	name: 'variant-transparent-light',
 }
 
-export const TransparentDisabled: Story = {
+export const TransparentLightDisabled: Story = {
 	args: {
-		variant: 'transparent',
+		variant: 'transparent-light',
 		children: 'Button',
 		disabled: true,
 	},
-	name: 'transparent/disabled',
+	name: 'variant-transparent-light/disabled',
 }
 
+export const TransparentDark: Story = {
+	args: {
+		variant: 'transparent-dark',
+		children: 'Button',
+	},
+	name: 'variant-transparent-dark',
+}
+
+export const TransparentDarkDisabled: Story = {
+	args: {
+		variant: 'transparent-dark',
+		children: 'Button',
+		disabled: true,
+	},
+	name: 'variant-transparent-dark/disabled',
+}

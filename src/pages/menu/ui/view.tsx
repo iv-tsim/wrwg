@@ -2,38 +2,46 @@ import { WithBackground } from '@/shared/layouts'
 import { MenuItem } from './item/view'
 import { Link, useNavigate } from 'react-router-dom'
 import { CloseButton, Typography } from '@/shared/ui'
-import { useGetCompanyInfo } from '@/shared/api'
 import { Logo } from '@/shared/ui'
-import { routesPath } from '@/shared/lib'
-import { planets } from '@/entities'
+import { routesPath } from '@/shared/routing'
+import { planets } from '@/entities/planet'
+import { useQuery } from '@tanstack/react-query'
+import { GET_COMPANY_KEY } from '@/shared/config'
+import { api } from '@/shared/api'
 import cn from 'classnames'
 
 import css from './styles.module.scss'
 
-import backgroundUrl from '@assets/img/backgrounds/bg_1.jpg'
+import { BackgroundOneImage } from '@assets/img/backgrounds'
 
 export const Menu = () => {
-	const { data } = useGetCompanyInfo()
+	const { data } = useQuery({
+		queryKey: GET_COMPANY_KEY,
+		queryFn: api.company.get,
+	})
+
 	const navigate = useNavigate()
 
 	return (
-		<WithBackground imageUrl={backgroundUrl} className={css.wrapper}>
+		<WithBackground imageUrl={BackgroundOneImage} className={css.wrapper}>
 			<header className={cn('container', css.wrapper__header)}>
-				<div />
-				<Logo className={css.wrapper__logo} />
-				<CloseButton
-					variant='light'
-					className={css.wrapper__close}
-					onClick={() => navigate(routesPath.home)}
-				/>
+				<div className={css.wrapper__headerContainer}>
+					<Logo className={css.wrapper__logo} />
+					<CloseButton
+						variant='light'
+						className={css.wrapper__close}
+						onClick={() => navigate(routesPath.home)}
+					/>
+				</div>
 			</header>
-			{Object.entries(planets).map(([key, value]) => (
+			{Object.entries(planets).map(([key, planet]) => (
 				<MenuItem
 					key={key}
-					planet={value.name}
-					planetDirection={value.nameDirection}
-					title={value.title}
-					to={value.to}
+					planet={planet.name}
+					planetDirection={planet.menuNameDirection}
+					mobilePlanetDirection={planet.mobileMenuNameDirection}
+					title={planet.title}
+					to={planet.to}
 					className={cn(css.item, css[`item_${key}`])}
 				/>
 			))}

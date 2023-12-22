@@ -1,0 +1,8 @@
+export { default as PlanetEarthImage } from './earth.png'
+export { default as PlanetJupiterImage } from './jupiter.png'
+export { default as PlanetMarsImage } from './mars.png'
+export { default as PlanetMercuryImage } from './mercury.png'
+export { default as PlanetSunImage } from './sun.png'
+export { default as PlanetVenusImage } from './venus.png'
+export { default as PlanetOrionImage } from './orion.svg'
+export { default as PlanetOrionWhiteImage } from './orion_white.svg'

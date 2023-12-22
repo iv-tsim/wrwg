@@ -40,6 +40,44 @@
 		}
 	}
 
+	&_status {
+		&_default {
+			#{$p} {
+				&__text {
+					color: var(--color-text-secondary);
+				}
+
+				&__icon {
+					fill: var(--color-elements-secondary);
+				}
+			}
+		}
+
+		&_isCurrentUser {
+			#{$p} {
+				&__text {
+					color: var(--color-elements-current-user);
+				}
+
+				&__icon {
+					fill: var(--color-elements-current-user);
+				}
+			}
+		}
+
+		&_disabled {
+			#{$p} {
+				&__text {
+					color: var(--color-text-disabled);
+				}
+
+				&__icon {
+					fill: var(--color-elements-disabled-dark);
+				}
+			}
+		}
+	}
+
 	&__icon {
 		@include media(xxl) {
 			width: vw(20);
@@ -58,6 +96,5 @@
 
 		width: 20px;
 		height: 20px;
-		fill: var(--color-elements-secondary);
 	}
 }

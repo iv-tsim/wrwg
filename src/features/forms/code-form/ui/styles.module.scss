@@ -1,10 +1,30 @@
 .wrapper {
 	&__text {
+		@include media(xxl) {
+			margin-bottom: vw(50);
+		}
+
+		@include media(xl) {
+			margin-bottom: 20px;
+		}
+
+		@include media(sm) {
+			margin-bottom: 10px;
+		}
+
 		margin-bottom: 50px;
 		text-align: center;
 	}
 
 	&__form {
+		@include media(xxl) {
+			margin-bottom: vw(60);
+		}
+
+		@include media(xl) {
+			margin-bottom: 35px;
+		}
+
 		margin-bottom: 60px;
 	}
 
@@ -15,6 +35,18 @@
 	}
 
 	&__timer {
+		@include media(xxl) {
+			margin-bottom: vw(50);
+		}
+
+		@include media(xl) {
+			margin-bottom: 30px;
+		}
+
+		@include media(sm) {
+			margin-bottom: 20px;
+		}
+
 		margin-bottom: 50px;
 	}
 }

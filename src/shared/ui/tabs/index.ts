@@ -1,1 +1,1 @@
-export * from './mainTab'
+export * from './main-tab'

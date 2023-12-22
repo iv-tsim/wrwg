@@ -1,19 +1,20 @@
-import { ITeam } from '@/shared/model'
 import { create } from 'zustand'
-import { IRegisterRequest } from '../api'
+
+import type { IRegisterInfo } from '@/shared/api/auth'
+import type { ITeam } from '@/shared/api/company'
 
 type TStep = 'slider' | 'form' | 'verify'
 
 interface IState {
 	step: TStep
 	team: ITeam | null
-	info: IRegisterRequest | null
+	info: IRegisterInfo | null
 }
 
 interface IActions {
 	setStep: (step: TStep) => void
 	setTeam: (team: ITeam) => void
-	setInfo: (info: IRegisterRequest) => void
+	setInfo: (info: IRegisterInfo) => void
 }
 
 export const useRegisterState = create<IState & IActions>(set => ({

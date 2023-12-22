@@ -1,0 +1,181 @@
+.planet {
+	position: relative;
+
+	&__header {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+
+	&__quiz {
+		position: absolute;
+		transform: scale(0);
+
+		animation-name: show;
+		animation-duration: 0.15s;
+		animation-timing-function: ease-in-out;
+		animation-fill-mode: forwards;
+		animation-iteration-count: 1;
+
+		&_0 {
+			@include media(lg) {
+				top: 14%;
+				left: 31.25%;
+			}
+
+			@include media(sm) {
+				top: 45.2%;
+				left: 4.4%;
+			}
+
+			top: 13.5%;
+			left: 34.7%;
+		}
+
+		&_1 {
+			@include media(lg) {
+				top: 38.6%;
+				left: 2.2%;
+			}
+
+			@include media(sm) {
+				top: 58%;
+				left: 19.4%;
+			}
+
+			top: 36.8%;
+			left: 14.1%;
+		}
+
+		&_2 {
+			@include media(lg) {
+				top: 52.4%;
+				left: 13.6%;
+			}
+
+			@include media(sm) {
+				top: 83.1%;
+				left: 13.8%;
+			}
+
+			top: 50%;
+			left: 22.2%;
+		}
+
+		&_3 {
+			@include media(lg) {
+				top: 28.6%;
+				left: 65.4%;
+			}
+
+			@include media(sm) {
+				top: 20.3%;
+				left: 29.1%;
+			}
+
+			top: 27.3%;
+			left: 59%;
+		}
+
+		&_4 {
+			@include media(lg) {
+				top: 53.3%;
+				left: 36.3%;
+			}
+
+			@include media(sm) {
+				top: 50.7%;
+				left: 43.3%;
+			}
+
+			top: 50.7%;
+			left: 38.3%;
+		}
+
+		&_5 {
+			@include media(lg) {
+				top: 67.1%;
+				left: 47.8%;
+			}
+
+			@include media(sm) {
+				top: 30%;
+				left: 66.1%;
+			}
+
+			top: 63.8%;
+			left: 46.5%;
+		}
+
+		&_6 {
+			@include media(lg) {
+				top: 41.6%;
+				left: 93.8%;
+			}
+
+			@include media(sm) {
+				top: 48.3%;
+				left: 83.3%;
+			}
+
+			top: 39.8%;
+			left: 79.2%;
+		}
+
+		&_7 {
+			@include media(lg) {
+				top: 82.9%;
+				left: 72.8%;
+			}
+
+			@include media(sm) {
+				top: 87.6%;
+				left: 65.2%;
+			}
+
+			top: 78.7%;
+			left: 64.3%;
+		}
+
+		&_8 {
+			@include media(lg) {
+				top: 61.8%;
+				left: 80%;
+			}
+
+			@include media(sm) {
+				top: 76.3%;
+				left: 83.3%;
+			}
+
+			top: 58.7%;
+			left: 69.4%;
+		}
+
+		&_9 {
+			@include media(lg) {
+				top: 80%;
+				left: 23.4%;
+			}
+
+			@include media(sm) {
+				top: 63.4%;
+				left: 58.6%;
+			}
+
+			top: 75.9%;
+			left: 29.1%;
+		}
+	}
+}
+
+@keyframes show {
+	0% {
+		transform: scale(0);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}

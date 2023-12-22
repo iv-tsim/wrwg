@@ -3,6 +3,18 @@
 		padding: vw(110) 0;
 	}
 
+	@include media(xl) {
+		padding: 130px 0;
+	}
+
+	@include media(lg) {
+		padding: 110px 0;
+	}
+
+	@include media(sm) {
+		padding: 90px 0;
+	}
+
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -12,6 +24,16 @@
 		@include media(xxl) {
 			bottom: vw(-258);
 			width: vw(400);
+		}
+
+		@include media(xl) {
+			bottom: -136px;
+			width: 300px;
+		}
+
+		@include media(lg) {
+			bottom: -93px;
+			width: 200px;
 		}
 
 		position: absolute;
@@ -26,6 +48,10 @@
 .header {
 	@include media(xxl) {
 		padding-top: vw(30);
+	}
+
+	@include media(xl) {
+		padding-top: 20px;
 	}
 
 	position: absolute;
@@ -58,17 +84,40 @@
 	}
 
 	&__wrapper {
-		@include media(xxl) {
-			min-height: vw(389);
+		@include media(sm) {
+			position: relative;
+			justify-content: center;
+			width: 100%;
 		}
 
 		display: flex;
 		align-items: center;
-		min-height: 389px;
 	}
 
 	&__border {
+		@include media(sm) {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
 		align-self: stretch;
+
+		&_position {
+			&_left {
+				@include media(sm) {
+					left: calc(50% - 100px);
+					transform: translate(-100%, -50%);
+				}
+			}
+
+			&_right {
+				@include media(sm) {
+					right: calc(50% - 100px);
+					transform: translate(100%, -50%);
+				}
+			}
+		}
 	}
 
 	&__content {
@@ -76,6 +125,21 @@
 			width: vw(460);
 			margin-right: vw(40);
 			margin-left: vw(40);
+		}
+
+		@include media(xl) {
+			width: 300px;
+			margin-right: 50px;
+			margin-left: 50px;
+		}
+
+		@include media(sm) {
+			position: relative;
+			z-index: 1;
+
+			width: 230px;
+			margin-right: 0;
+			margin-left: 0;
 		}
 
 		width: 460px;

@@ -1,11 +1,11 @@
+import { MenuItem } from './'
+
 import type { Meta, StoryObj } from '@storybook/react'
 import type { IMenuItemProps } from './'
 
-import { MenuItem } from './'
-
 const meta: Meta<IMenuItemProps> = {
 	component: MenuItem,
-	title: 'Pages/menu/MenuItem',
+	title: 'Pages/menu/menu-item',
 	tags: ['autodocs'],
 }
 
@@ -13,17 +13,17 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const MainDirectionLeft: Story = {
+export const DirectionLeft: Story = {
 	args: {
 		planet: 'меркурий',
 		planetDirection: 'left',
 		title: 'викторины',
 		to: '#',
 	},
-	name: 'main/direction/left',
+	name: 'direction-left',
 }
 
-export const MainDirectionLeftDisabled: Story = {
+export const DirectionLeftDisabled: Story = {
 	args: {
 		planet: 'меркурий',
 		planetDirection: 'left',
@@ -31,20 +31,20 @@ export const MainDirectionLeftDisabled: Story = {
 		to: '#',
 		disabled: true,
 	},
-	name: 'main/direction/left/disabled',
+	name: 'direction-left/disabled',
 }
 
-export const MainDirectionRight: Story = {
+export const DirectionRight: Story = {
 	args: {
 		planet: 'меркурий',
 		planetDirection: 'right',
 		title: 'викторины',
 		to: '#',
 	},
-	name: 'main/direction/right',
+	name: 'direction-right',
 }
 
-export const MainDirectionRightDisabled: Story = {
+export const DirectionRightDisabled: Story = {
 	args: {
 		planet: 'меркурий',
 		planetDirection: 'right',
@@ -52,5 +52,5 @@ export const MainDirectionRightDisabled: Story = {
 		to: '#',
 		disabled: true,
 	},
-	name: 'main/direction/right/disabled',
+	name: 'direction-right/disabled',
 }

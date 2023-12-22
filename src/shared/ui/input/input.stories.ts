@@ -1,11 +1,11 @@
+import { Input } from './'
+
 import type { Meta, StoryObj } from '@storybook/react'
 import type { IInputProps } from './'
 
-import { Input } from './'
-
 const meta: Meta<IInputProps> = {
 	component: Input,
-	title: 'UI/Input',
+	title: 'UI/input',
 	tags: ['autodocs'],
 }
 
@@ -13,31 +13,31 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const InputDarkCenter: Story = {
+export const DarkCenter: Story = {
 	args: {
 		placeholder: 'позывной пилота',
 		variant: 'dark',
 		textAlign: 'center',
 	},
-	name: 'input/dark/center',
+	name: 'variant-dark/textAlign-center',
 }
 
-export const InputDarkLeft: Story = {
+export const DarkLeft: Story = {
 	args: {
 		placeholder: 'позывной пилота',
 		variant: 'dark',
 		textAlign: 'left',
 	},
-	name: 'input/dark/left',
+	name: 'variant-dark/textAlign-left',
 }
 
-export const InputLightCenter: Story = {
+export const LightCenter: Story = {
 	args: {
 		placeholder: 'позывной пилота',
 		variant: 'light',
 		textAlign: 'center',
 	},
-	name: 'input/light/center',
+	name: 'variant-light/textAlign-center',
 	parameters: {
 		backgrounds: {
 			default: 'light',
@@ -45,13 +45,13 @@ export const InputLightCenter: Story = {
 	},
 }
 
-export const InputLightLeft: Story = {
+export const LightLeft: Story = {
 	args: {
 		placeholder: 'позывной пилота',
 		variant: 'light',
 		textAlign: 'left',
 	},
-	name: 'input/light/left',
+	name: 'variant-light/textAlign-left',
 	parameters: {
 		backgrounds: {
 			default: 'light',
@@ -59,24 +59,24 @@ export const InputLightLeft: Story = {
 	},
 }
 
-export const InputDarkInvalid: Story = {
+export const DarkInvalid: Story = {
 	args: {
 		placeholder: 'позывной пилота',
 		variant: 'dark',
 		textAlign: 'center',
 		error: 'error',
 	},
-	name: 'input/dark/invalid',
+	name: 'variant-dark/invalid',
 }
 
-export const InputLightInvalid: Story = {
+export const LightInvalid: Story = {
 	args: {
 		placeholder: 'позывной пилота',
 		variant: 'light',
 		textAlign: 'center',
 		error: 'error',
 	},
-	name: 'input/light/invalid',
+	name: 'variant-light/invalid',
 	parameters: {
 		backgrounds: {
 			default: 'light',

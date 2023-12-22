@@ -1,0 +1,189 @@
+.select {
+	$p: &;
+
+	position: relative;
+
+	&_status {
+		&_opened {
+			#{$p} {
+				&__dropdown {
+					visibility: visible;
+					opacity: 1;
+				}
+
+				&__top {
+					color: var(--color-text-white-grey);
+					border-color: var(--color-elements-white-grey);
+
+					#{$p} {
+						&__arrow {
+							transform: rotate(180deg);
+							border-color: var(--color-elements-white-grey) transparent transparent;
+						}
+					}
+				}
+			}
+		}
+
+		&_disabled {
+			#{$p} {
+				&__dropdown {
+					visibility: hidden;
+					opacity: 0;
+				}
+
+				&__top {
+					cursor: not-allowed;
+					color: var(--color-text-disabled);
+					border-color: var(--color-elements-disabled);
+
+					#{$p} {
+						&__arrow {
+							border-color: var(--color-elements-disabled) transparent transparent;
+						}
+					}
+
+					&:hover,
+					&:active {
+						color: var(--color-text-disabled);
+						border-color: var(--color-elements-disabled);
+
+						#{$p} {
+							&__arrow {
+								border-color: var(--color-elements-disabled) transparent transparent;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__top {
+		@include media(xxl) {
+			padding-bottom: vw(14);
+		}
+
+		@include media(xl) {
+			padding-bottom: 11px;
+		}
+
+		cursor: pointer;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		width: 100%;
+		padding-bottom: 14px;
+
+		color: inherit;
+
+		appearance: none;
+		background: none;
+		border: none;
+		border-bottom: 1px solid var(--color-elements-secondary);
+
+		transition:
+			0.3s color,
+			0.3s border-color;
+
+		&:hover,
+		&:active {
+			color: var(--color-text-white-grey);
+
+			#{$p} {
+				&__arrow {
+					border-color: var(--color-elements-white-grey) transparent transparent;
+				}
+			}
+		}
+	}
+
+	&__arrow {
+		@include media(xxl) {
+			border-width: vw(10) vw(5) 0;
+		}
+
+		@include media(xl) {
+			border-width: 10px 5px 0;
+		}
+
+		width: 0;
+		height: 0;
+
+		border-color: var(--color-elements-secondary) transparent transparent;
+		border-style: solid;
+		border-width: 10px 5px 0;
+
+		transition: 0.3s border-color;
+	}
+
+	&__dropdown {
+		@include media(xxl) {
+			padding-top: vw(10);
+		}
+
+		@include media(xl) {
+			padding-top: 7px;
+		}
+
+		position: absolute;
+		z-index: 100;
+		top: 100%;
+
+		width: 100%;
+		padding-top: 10px;
+
+		visibility: hidden;
+		opacity: 0;
+	}
+
+	&__main {
+		@include media(xxl) {
+			padding: vw(22);
+		}
+
+		@include media(xl) {
+			padding: 15px;
+		}
+
+		padding: 22px;
+		background-color: var(--color-elements-primary);
+		border: 1px solid var(--color-elements-background-stroke);
+	}
+
+	&__list {
+		list-style: none;
+	}
+
+	&__item {
+		&:not(:last-child) {
+			@include media(xxl) {
+				margin-bottom: vw(28);
+			}
+
+			@include media(xl) {
+				margin-bottom: 15px;
+			}
+
+			margin-bottom: 28px;
+		}
+	}
+
+	&__button {
+		cursor: pointer;
+
+		color: inherit;
+
+		appearance: none;
+		background: none;
+		border: none;
+
+		transition: 0.3s color;
+
+		&:hover {
+			color: var(--color-text-white-grey);
+		}
+	}
+}

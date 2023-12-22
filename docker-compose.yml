@@ -10,6 +10,8 @@ services:
       - "traefik.http.routers.woerwag.rule=Host(`woerwag.grechka.digital`)"
       - "traefik.http.routers.woerwag.middlewares=auth"
       - "traefik.http.middlewares.auth.basicauth.users=11:$$2y$$10$$.SECB956TZozGhwgDqWPHOZI1irr/DMegk.sdiPbkKj38UlqfSz3W"
+    volumes:
+      - "./storybook-static:/usr/share/nginx/html/sb"
 
 networks:
   default:

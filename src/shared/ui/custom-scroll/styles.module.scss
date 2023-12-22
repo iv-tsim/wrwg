@@ -1,0 +1,75 @@
+.wrapper {
+	$p: &;
+
+	&_paddingSize {
+		&_default {
+			#{$p} {
+				&__view {
+					@include media(xxl) {
+						padding-right: vw(60);
+					}
+
+					@include media(xl) {
+						padding-right: 40px;
+					}
+
+					@include media(lg) {
+						padding-right: 30px;
+					}
+
+					@include media(sm) {
+						padding-right: 0;
+					}
+
+					padding-right: 60px;
+				}
+			}
+		}
+
+		&_small {
+			#{$p} {
+				&__view {
+					@include media(xxl) {
+						padding-right: vw(16);
+					}
+
+					@include media(xl) {
+						padding-right: 16px;
+					}
+
+					@include media(sm) {
+						padding-right: 0;
+					}
+
+					padding-right: 16px;
+				}
+			}
+		}
+	}
+
+	&__track {
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: 7px !important;
+
+		&::before {
+			content: '';
+
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 3px;
+
+			border-right: 1px solid var(--color-elements-white-grey);
+		}
+	}
+
+	&__thumb {
+		background-color: var(--color-elements-disabled);
+	}
+
+	&__view {
+		padding-bottom: 1px;
+	}
+}

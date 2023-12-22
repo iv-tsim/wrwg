@@ -1,11 +1,11 @@
+import { IconButton } from './'
+
 import type { Meta, StoryObj } from '@storybook/react'
 import type { IconButtonProps } from './'
 
-import { IconButton } from './'
-
 const meta: Meta<IconButtonProps> = {
 	component: IconButton,
-	title: 'UI/buttons/IconButton',
+	title: 'UI/buttons/icon-button',
 	tags: ['autodocs'],
 }
 
@@ -13,38 +13,58 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const MainWithIcon: Story = {
+export const WithIcon: Story = {
 	args: {
 		children: 'Бортовой журнал',
 		isReversed: false,
 		iconId: 'journal',
 	},
-	name: 'main/with-icon',
+	name: 'with-icon',
 }
 
-export const MainWithIconReversed: Story = {
+export const WithIconDisabled: Story = {
+	args: {
+		children: 'Бортовой журнал',
+		isReversed: false,
+		iconId: 'journal',
+		disabled: true,
+	},
+	name: 'with-icon/disabled',
+}
+
+export const WithIconReversed: Story = {
 	args: {
 		children: 'Бортовой журнал',
 		isReversed: true,
 		iconId: 'journal',
 	},
-	name: 'main/with-icon/reversed',
+	name: 'with-icon/reversed',
 }
 
-export const MainWithImage: Story = {
+export const WithImage: Story = {
 	args: {
 		children: 'Бортовой журнал',
 		isReversed: false,
 		imageUrl: 'https://i.postimg.cc/bJF5RB7R/Frame-22.jpg',
 	},
-	name: 'main/with-image',
+	name: 'with-image',
 }
 
-export const MainWithImageReversed: Story = {
+export const WithImageDisabled: Story = {
+	args: {
+		children: 'Бортовой журнал',
+		isReversed: false,
+		imageUrl: 'https://i.postimg.cc/bJF5RB7R/Frame-22.jpg',
+		disabled: true,
+	},
+	name: 'with-image/disabled',
+}
+
+export const WithImageReversed: Story = {
 	args: {
 		children: 'Бортовой журнал',
 		isReversed: true,
 		imageUrl: 'https://i.postimg.cc/bJF5RB7R/Frame-22.jpg',
 	},
-	name: 'main/with-image/reversed',
+	name: 'with-image/reversed',
 }

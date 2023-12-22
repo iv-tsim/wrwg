@@ -1,11 +1,11 @@
+import { ComplicatedButton } from './'
+
 import type { Meta, StoryObj } from '@storybook/react'
 import type { IComplicatedButtonProps } from './'
 
-import { ComplicatedButton } from './'
-
 const meta: Meta<IComplicatedButtonProps> = {
 	component: ComplicatedButton,
-	title: 'UI/buttons/ComplicatedButton',
+	title: 'UI/buttons/complicated-button',
 	tags: ['autodocs'],
 }
 
@@ -13,18 +13,17 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const Main: Story = {
+export const Default: Story = {
 	args: {
 		children: 'Старт',
 	},
-	name: 'main',
+	name: 'default',
 }
 
-export const MainDisabled: Story = {
+export const Disabled: Story = {
 	args: {
 		children: 'Старт',
 		disabled: true,
 	},
-	name: 'main/disabled',
+	name: 'disabled',
 }
-

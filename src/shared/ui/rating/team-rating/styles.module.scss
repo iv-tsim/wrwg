@@ -1,0 +1,64 @@
+.wrapper {
+	@include media(xxl) {
+		padding-bottom: vw(55);
+	}
+
+	@include media(xl) {
+		padding-bottom: 30px;
+	}
+
+	@include media(lg) {
+		padding-bottom: 25px;
+	}
+
+	@include media(sm) {
+		padding-bottom: 20px;
+	}
+
+	display: flex;
+	align-items: center;
+	padding-bottom: 55px;
+	border-bottom: 1px solid var(--color-elements-secondary);
+
+	&__right {
+		display: flex;
+		flex-grow: 1;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__order {
+		@include media(xxl) {
+			min-width: vw(45);
+			margin-right: vw(30);
+		}
+
+		@include media(xl) {
+			min-width: 35px;
+			margin-right: 20px;
+		}
+
+		@include media(lg) {
+			min-width: 26px;
+		}
+
+		min-width: 45px;
+		margin-right: 30px;
+	}
+
+	&__name {
+		@include media(xxl) {
+			margin-right: vw(20);
+		}
+
+		@include media(xl) {
+			margin-right: 20px;
+		}
+
+		@include media(sm) {
+			margin-right: 10px;
+		}
+
+		margin-right: 20px;
+	}
+}

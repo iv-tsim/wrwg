@@ -2,22 +2,50 @@
 	position: relative;
 
 	&__header {
+		@include media(xxl) {
+			padding-top: vw(30);
+		}
+
+		@include media(xl) {
+			padding-top: 20px;
+		}
+
 		position: absolute;
 		top: 0;
-
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-
 		width: 100%;
 		padding-top: 30px;
+
+		&Container {
+			position: relative;
+		}
+	}
+
+	&__logo {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	&__close {
+		position: absolute;
+		top: 0;
+		right: 0;
 	}
 
 	&__bottom {
+		@include media(xxl) {
+			padding-bottom: vw(20);
+		}
+
+		@include media(xl) {
+			padding-bottom: 20px;
+		}
+
 		position: absolute;
 		bottom: 0;
 		width: 100%;
-		padding-bottom: 18px;
+		padding-bottom: 20px;
 	}
 
 	&__list {
@@ -27,7 +55,19 @@
 
 	&__item {
 		&:not(:last-child) {
-			margin-right: 30px;
+			@include media(xxl) {
+				margin-right: vw(80);
+			}
+
+			@include media(xl) {
+				margin-right: 30px;
+			}
+
+			@include media(sm) {
+				margin-right: 20px;
+			}
+
+			margin-right: 80px;
 		}
 	}
 
@@ -40,11 +80,52 @@
 	position: absolute;
 
 	&_mercury {
+		@include media(xxl) {
+			left: vw(176);
+		}
+
+		@include media(xl) {
+			top: 19.5%;
+			left: 132px;
+		}
+
+		@include media(lg) {
+			top: 20.3125%;
+			left: 95px;
+		}
+
+		@include media(sm) {
+			top: 18.18%;
+			left: 20px;
+		}
+
 		top: 18.5%;
 		left: 176px;
 	}
 
 	&_mars {
+		@include media(xxl) {
+			right: vw(30);
+			max-width: vw(741);
+		}
+
+		@include media(xl) {
+			top: 27.125%;
+			right: 20px;
+			max-width: 556px;
+		}
+
+		@include media(lg) {
+			top: 28.64%;
+			max-width: 401px;
+		}
+
+		@include media(sm) {
+			top: 32.7%;
+			right: 20px;
+			max-width: 282px;
+		}
+
 		top: 25.9%;
 		right: 30px;
 		max-width: 741px;
@@ -52,11 +133,48 @@
 	}
 
 	&_venus {
+		@include media(xxl) {
+			left: vw(30);
+		}
+
+		@include media(xl) {
+			bottom: 32.25%;
+			left: 20px;
+		}
+
+		@include media(lg) {
+			bottom: 31.64%;
+		}
+
+		@include media(sm) {
+			bottom: 27.6%;
+			max-width: 230px;
+		}
+
 		bottom: 33.2%;
 		left: 30px;
 	}
 
 	&_jupiter {
+		@include media(xxl) {
+			right: vw(146);
+		}
+
+		@include media(xl) {
+			right: 110px;
+			bottom: 13.375%;
+		}
+
+		@include media(lg) {
+			right: 78px;
+			bottom: 12.76%;
+		}
+
+		@include media(sm) {
+			right: 20px;
+			bottom: 12.72%;
+		}
+
 		right: 146px;
 		bottom: 16.6%;
 	}

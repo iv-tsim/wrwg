@@ -5,25 +5,35 @@
 
 	&__input {
 		@include media(xxl) {
-			padding-bottom: vw(20);
+			padding: vw(10) 0;
 			font-size: vw(28);
 			letter-spacing: vw(3.22);
 		}
 
 		@include media(xl) {
-			padding-bottom: 12px;
+			padding: 7px 0;
+			font-size: 18px;
+			letter-spacing: 2.07px;
+		}
+
+		@include media(lg) {
+			font-size: 16px;
+			letter-spacing: 1.84px;
+		}
+
+		@include media(sm) {
 			font-size: 14px;
 			letter-spacing: 1.61px;
 		}
 
 		width: 100%;
-		padding-bottom: 20px;
+		padding: 10px 0;
 
 		font-family: inherit;
 		font-size: 28px;
 		font-weight: 400;
 		font-style: normal;
-		line-height: normal;
+		line-height: 100%;
 		text-align: inherit;
 		text-transform: uppercase;
 		letter-spacing: 3.22px;
@@ -32,6 +42,7 @@
 		background: none;
 		border: none;
 		border-bottom: 1px solid transparent;
+		border-radius: 0;
 
 		transition:
 			0.3s color,
@@ -41,6 +52,7 @@
 			font-family: inherit;
 			color: inherit;
 			opacity: 1;
+			transition: 0.3s color;
 		}
 
 		&:focus {
@@ -77,6 +89,16 @@
 					color: var(--color-text-secondary);
 					border-color: var(--color-elements-white-grey);
 
+					&::placeholder {
+						color: var(--color-text-input);
+					}
+
+					&:hover {
+						&::placeholder {
+							color: var(--color-text-secondary);
+						}
+					}
+
 					&:hover,
 					&:focus {
 						color: var(--color-text-white-grey);
@@ -88,7 +110,7 @@
 		&_light {
 			#{$p} {
 				&__input {
-					color: var(--color-text-primary);
+					color: var(--color-elements-primary);
 					border-color: var(--color-elements-primary);
 
 					&:hover,
@@ -116,6 +138,10 @@
 				&__input {
 					color: var(--color-text-tertiary);
 					border-color: var(--color-elements-tertiary);
+
+					&::placeholder {
+						color: var(--color-text-tertiary);
+					}
 
 					&:hover,
 					&:focus {

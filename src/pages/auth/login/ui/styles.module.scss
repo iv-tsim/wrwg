@@ -1,14 +1,18 @@
 .wrapper {
+	@include media(sm) {
+		transform: translateY(10px);
+	}
+
 	&__input {
 		@include media(xxl) {
-			margin-bottom: vw(60);
+			margin-bottom: vw(40);
 		}
 
 		@include media(xl) {
 			margin-bottom: 35px;
 		}
 
-		margin-bottom: 60px;
+		margin-bottom: 40px;
 	}
 
 	&__bottom {
@@ -20,6 +24,10 @@
 	&__submit {
 		@include media(xxl) {
 			margin-bottom: vw(20);
+		}
+
+		@include media(xl) {
+			margin-bottom: 20px;
 		}
 
 		@include media(sm) {

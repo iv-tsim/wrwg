@@ -1,8 +1,10 @@
-import { routesPath } from '@/shared/lib'
-import jupiterUrl from '@assets/img/planets/jupiter.png'
-import mercuryUrl from '@assets/img/planets/mercury.png'
-import venusUrl from '@assets/img/planets/venus.png'
-import marsUrl from '@assets/img/planets/mars.png'
+import { routesPath } from '@/shared/routing'
+import {
+	PlanetJupiterImage,
+	PlanetMercuryImage,
+	PlanetVenusImage,
+	PlanetMarsImage,
+} from '@assets/img/planets'
 
 enum EPlanets {
 	'mercury' = 'mercury',
@@ -20,6 +22,8 @@ interface IPlanet {
 	name: string
 	title: string
 	nameDirection: TPlanetNameDirection
+	menuNameDirection: TPlanetNameDirection
+	mobileMenuNameDirection: TPlanetNameDirection
 	homeImageUrl: string
 }
 
@@ -27,29 +31,37 @@ export const planets: Record<TPlanet, IPlanet> = {
 	jupiter: {
 		name: 'Юпитер',
 		title: 'команда',
-		to: routesPath.planets_mercury,
+		to: routesPath.home,
 		nameDirection: 'right',
-		homeImageUrl: jupiterUrl,
+		menuNameDirection: 'right',
+		mobileMenuNameDirection: 'right',
+		homeImageUrl: PlanetJupiterImage,
 	},
 	mars: {
 		name: 'Марс',
 		title: 'инновационный проект',
-		to: routesPath.planets_mercury,
+		to: routesPath.home,
 		nameDirection: 'left',
-		homeImageUrl: marsUrl,
+		menuNameDirection: 'left',
+		mobileMenuNameDirection: 'right',
+		homeImageUrl: PlanetMarsImage,
 	},
 	mercury: {
 		name: 'Меркурий',
 		title: 'викторины',
 		to: routesPath.planets_mercury,
-		nameDirection: 'right',
-		homeImageUrl: mercuryUrl,
+		nameDirection: 'left',
+		menuNameDirection: 'right',
+		mobileMenuNameDirection: 'left',
+		homeImageUrl: PlanetMercuryImage,
 	},
 	venus: {
 		name: 'Венера',
 		title: 'тематическая неделя',
-		to: routesPath.planets_mercury,
-		nameDirection: 'left',
-		homeImageUrl: venusUrl,
+		to: routesPath.home,
+		nameDirection: 'right',
+		menuNameDirection: 'left',
+		mobileMenuNameDirection: 'left',
+		homeImageUrl: PlanetVenusImage,
 	},
 }

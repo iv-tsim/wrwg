@@ -1,1 +1,1 @@
-export * from './view'
+export * from './ui/view'

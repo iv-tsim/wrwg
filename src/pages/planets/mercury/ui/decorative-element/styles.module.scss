@@ -1,0 +1,65 @@
+.border {
+	@include media(xxl) {
+		width: vw(40);
+		height: vw(40);
+	}
+
+	@include media(xl) {
+		width: 30px;
+		height: 30px;
+	}
+
+	@include media(lg) {
+		width: 20px;
+		height: 20px;
+	}
+
+	width: 40px;
+	height: 40px;
+
+	border-color: var(--color-elements-primary);
+	border-style: solid;
+	border-width: 0;
+
+	&_variant {
+		&_topLeft {
+			border-top-width: 1px;
+			border-left-width: 1px;
+		}
+
+		&_topRight {
+			border-top-width: 1px;
+			border-right-width: 1px;
+		}
+
+		&_bottomLeft {
+			border-bottom-width: 1px;
+			border-left-width: 1px;
+		}
+
+		&_bottomRight {
+			border-right-width: 1px;
+			border-bottom-width: 1px;
+		}
+	}
+
+	&_hide {
+		&_top {
+			border-top: none;
+		}
+
+		&_left {
+			@include media-up(md) {
+				border-left: none;
+			}
+		}
+	}
+
+	&_hideMobile {
+		&_top {
+			@include media(sm) {
+				border-top: none;
+			}
+		}
+	}
+}

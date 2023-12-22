@@ -1,4 +1,4 @@
-import { CommonAuthLayout, RedirectIfLoggedIn } from '@/shared/layouts'
+import { CommonAuthLayout } from '@/shared/layouts'
 import { useAuthResetPasswordState } from '../model'
 import { EmailForm } from './email-form'
 import { CodeForm } from './code-form'
@@ -29,9 +29,5 @@ export const AuthChangePassword = () => {
 		}
 	}
 
-	return (
-		<RedirectIfLoggedIn>
-			<CommonAuthLayout title='Сброс пароля'>{render()}</CommonAuthLayout>
-		</RedirectIfLoggedIn>
-	)
+	return <CommonAuthLayout title='Сброс пароля'>{render()}</CommonAuthLayout>
 }

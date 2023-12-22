@@ -1,12 +1,15 @@
 import { Input, MainButton, Typography } from '@/shared/ui'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
-import { FC, ReactNode, useEffect } from 'react'
-import { TCodeFields, codeSchema } from '../model'
+import { useEffect } from 'react'
+import { codeSchema } from '../model'
 import { CODE_LENGTH } from '@/shared/config'
+import { FormTimer } from '@/features/timers'
+
+import type { FC, ReactNode } from 'react'
+import type { TCodeFields } from '../model'
 
 import css from './styles.module.scss'
-import { Timer } from '@/features/timer'
 
 interface ICodeFormProps {
 	onSubmit: (code: TCodeFields['code']) => void
@@ -15,12 +18,7 @@ interface ICodeFormProps {
 	text: ReactNode
 }
 
-export const CodeForm: FC<ICodeFormProps> = ({
-	onCancel,
-	onSubmit,
-	text,
-	onRetry,
-}) => {
+export const CodeForm: FC<ICodeFormProps> = ({ onCancel, onSubmit, text, onRetry }) => {
 	const {
 		register,
 		formState: { errors },
@@ -51,11 +49,7 @@ export const CodeForm: FC<ICodeFormProps> = ({
 			<Typography variant='text' className={css.wrapper__text}>
 				{text}
 			</Typography>
-			<form
-				action='#'
-				className={css.wrapper__form}
-				onSubmit={handleFormSubmit}
-			>
+			<form action='#' className={css.wrapper__form} onSubmit={handleFormSubmit}>
 				<Input
 					placeholder='код'
 					error={errors.code?.message}
@@ -64,18 +58,14 @@ export const CodeForm: FC<ICodeFormProps> = ({
 				/>
 			</form>
 			<div className={css.wrapper__bottom}>
-				<Timer
+				<FormTimer
 					onBtnClick={() => {
 						reset()
 						onRetry()
 					}}
 					className={css.wrapper__timer}
 				/>
-				<MainButton
-					onClick={onCancel}
-					variant='transparent'
-					className={css.wrapper__cancel}
-				>
+				<MainButton onClick={onCancel} variant='transparent-light' className={css.wrapper__cancel}>
 					Назад
 				</MainButton>
 			</div>

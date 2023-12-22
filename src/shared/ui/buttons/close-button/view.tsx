@@ -1,19 +1,15 @@
-import type { TDefaultButtonProps } from '@/shared/model'
-import type { FC } from 'react'
 import cn from 'classnames'
+
+import type { ButtonHTMLAttributes, FC } from 'react'
 
 import css from './styles.module.scss'
 
 export interface ICloseButtonProps
-	extends Omit<TDefaultButtonProps, 'children'> {
+	extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'children'> {
 	variant: 'dark' | 'light'
 }
 
-export const CloseButton: FC<ICloseButtonProps> = ({
-	className,
-	variant = 'light',
-	...props
-}) => {
+export const CloseButton: FC<ICloseButtonProps> = ({ className, variant = 'light', ...props }) => {
 	return (
 		<button
 			className={cn(css.button, className, {
