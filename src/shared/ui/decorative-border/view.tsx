@@ -1,22 +1,16 @@
-import { FC, PropsWithChildren } from 'react'
 import cn from 'classnames'
+
+import type { FC, PropsWithChildren } from 'react'
 
 import css from './styles.module.scss'
 
-import decLeftUrl from '@assets/img/auth/dec_left.svg'
-import decRightUrl from '@assets/img/auth/dec_right.svg'
+import { AuthDecLeftImage, AuthDecRightImage } from '@assets/img/auth'
 
-export interface IDecorativeBorderProps
-	extends PropsWithChildren,
-		IWithClassname {
+export interface IDecorativeBorderProps extends PropsWithChildren, IWithClassname {
 	position: 'left' | 'right'
 }
 
-export const DecorativeBorder: FC<IDecorativeBorderProps> = ({
-	children,
-	className,
-	position,
-}) => {
+export const DecorativeBorder: FC<IDecorativeBorderProps> = ({ children, className, position }) => {
 	return (
 		<div
 			className={cn(css.border, className, {
@@ -25,13 +19,11 @@ export const DecorativeBorder: FC<IDecorativeBorderProps> = ({
 			})}
 		>
 			<img
-				src={position === 'left' ? decLeftUrl : decRightUrl}
+				src={position === 'left' ? AuthDecLeftImage : AuthDecRightImage}
 				alt='decoration'
 				className={css.border__dec}
 			/>
-			{children && position === 'left' && (
-				<div className={css.border__optional}>{children}</div>
-			)}
+			{children && position === 'left' && <div className={css.border__optional}>{children}</div>}
 		</div>
 	)
 }

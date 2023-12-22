@@ -3,12 +3,32 @@
 		padding: 0 vw(120);
 	}
 
+	@include media(xl) {
+		padding: 0 120px;
+	}
+
+	@include media(lg) {
+		padding: 0 40px;
+	}
+
+	@include media(sm) {
+		flex-direction: column;
+		align-items: stretch;
+		padding-top: 50px;
+	}
+
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding: 0 120px;
 
 	&__circle {
+		@include media(sm) {
+			align-self: center;
+			order: 1;
+			margin-bottom: 40px;
+		}
+
 		position: relative;
 	}
 
@@ -21,12 +41,28 @@
 
 	&__left,
 	&__right {
+		display: flex;
+		flex-direction: column;
 		flex-grow: 1;
 	}
 
 	&__left {
 		@include media(xxl) {
 			margin-right: vw(105);
+		}
+
+		@include media(xl) {
+			margin-right: 90px;
+		}
+
+		@include media(lg) {
+			margin-right: 35px;
+		}
+
+		@include media(sm) {
+			order: 2;
+			margin-right: 0;
+			margin-bottom: 35px;
 		}
 
 		margin-right: 105px;
@@ -37,16 +73,56 @@
 			margin-left: vw(105);
 		}
 
+		@include media(xl) {
+			margin-left: 90px;
+		}
+
+		@include media(lg) {
+			margin-left: 35px;
+		}
+
+		@include media(sm) {
+			order: 3;
+			margin-left: 0;
+		}
+
 		margin-left: 105px;
 	}
 
+	&__inputs {
+		@include media(sm) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+		}
+	}
+
 	&__input {
+		@include media(sm) {
+			width: 100%;
+			max-width: 230px;
+		}
+
 		&:not(:last-child) {
 			@include media(xxl) {
 				margin-bottom: vw(60);
 			}
 
+			@include media(xl) {
+				margin-bottom: 35px;
+			}
+
 			margin-bottom: 60px;
 		}
+	}
+
+	&__submitMobile {
+		@include media-up(md) {
+			display: none;
+		}
+
+		align-self: center;
+		margin-top: 35px;
 	}
 }

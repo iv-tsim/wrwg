@@ -26,7 +26,11 @@
 
 	&_direction {
 		&_right {
-			transform: rotate(180deg);
+			#{$p} {
+				&__icon {
+					transform: rotate(180deg);
+				}
+			}
 		}
 	}
 
@@ -45,6 +49,8 @@
 			width: 15px;
 			height: 48px;
 		}
+
+		display: block;
 
 		width: 36px;
 		height: 118px;

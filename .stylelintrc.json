@@ -7,6 +7,6 @@
 	"plugins": ["stylelint-order"],
 	"rules": {
 		"scss/at-extend-no-missing-placeholder": null
-	}
+	},
+	"ignoreFiles": ["storybook-static/**/*", "node_modules/**/*"]
 }
-

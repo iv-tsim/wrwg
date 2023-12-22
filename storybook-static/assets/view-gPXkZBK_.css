@@ -1,0 +1,119 @@
+._icon_141z0_1 {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+}
+@media (max-width: 1919.98px) {
+	._icon_141z0_1 {
+		width: 2.0833333333vw;
+		height: 2.0833333333vw;
+	}
+}
+@media (max-width: 1599.98px) {
+	._icon_141z0_1 {
+		width: 30px;
+		height: 30px;
+	}
+}
+._icon_icon_with_141z0_21 {
+	padding: 1px;
+}
+@media (max-width: 1919.98px) {
+	._icon_icon_with_141z0_21 {
+		padding: 0.0520833333vw;
+	}
+}
+._icon_icon_with_141z0_21 ._icon__img_141z0_29 {
+	width: 38px;
+	height: 38px;
+}
+@media (max-width: 1919.98px) {
+	._icon_icon_with_141z0_21 ._icon__img_141z0_29 {
+		width: 1.9791666667vw;
+		height: 1.9791666667vw;
+	}
+}
+@media (max-width: 1599.98px) {
+	._icon_icon_with_141z0_21 ._icon__img_141z0_29 {
+		width: 28px;
+		height: 28px;
+	}
+}
+._icon_icon_without_141z0_45 {
+	padding: 3px;
+}
+@media (max-width: 1919.98px) {
+	._icon_icon_without_141z0_45 {
+		padding: 0.15625vw;
+	}
+}
+._icon_icon_without_141z0_45 ._icon__img_141z0_29 {
+	width: 34px;
+	height: 34px;
+}
+@media (max-width: 1919.98px) {
+	._icon_icon_without_141z0_45 ._icon__img_141z0_29 {
+		width: 1.7708333333vw;
+		height: 1.7708333333vw;
+	}
+}
+@media (max-width: 1599.98px) {
+	._icon_icon_without_141z0_45 ._icon__img_141z0_29 {
+		width: 24px;
+		height: 24px;
+	}
+}
+._icon__line_141z0_69 {
+	position: absolute;
+	display: block;
+	border-color: inherit;
+}
+._icon__line_orientation_horizontal_141z0_74 {
+	left: 50%;
+	transform: translate(-50%);
+	width: 28px;
+	border-top-style: solid;
+	border-top-width: 1px;
+}
+@media (max-width: 1919.98px) {
+	._icon__line_orientation_horizontal_141z0_74 {
+		width: 1.4583333333vw;
+	}
+}
+@media (max-width: 1599.98px) {
+	._icon__line_orientation_horizontal_141z0_74 {
+		width: 21px;
+	}
+}
+._icon__line_orientation_vertical_141z0_91 {
+	top: 50%;
+	transform: translateY(-50%);
+	height: 28px;
+	border-left-style: solid;
+	border-left-width: 1px;
+}
+@media (max-width: 1919.98px) {
+	._icon__line_orientation_vertical_141z0_91 {
+		height: 1.4583333333vw;
+	}
+}
+@media (max-width: 1599.98px) {
+	._icon__line_orientation_vertical_141z0_91 {
+		height: 21px;
+	}
+}
+._icon__line_position_top_141z0_108 {
+	top: 0;
+}
+._icon__line_position_right_141z0_111 {
+	right: 0;
+}
+._icon__line_position_bottom_141z0_114 {
+	bottom: 0;
+}
+._icon__line_position_left_141z0_117 {
+	left: 0;
+}

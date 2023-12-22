@@ -1,0 +1,144 @@
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+
+	&__text {
+		position: relative;
+		z-index: 1;
+		color: var(--color-text-p);
+
+		&Wrapper {
+			@include media(xxl) {
+				padding: vw(40);
+			}
+
+			@include media(xl) {
+				padding: 30px;
+			}
+
+			@include media(lg) {
+				padding: 20px;
+			}
+
+			@include media(sm) {
+				padding: 15px;
+			}
+
+			position: relative;
+			padding: 40px;
+		}
+	}
+
+	&__main {
+		@include media(xxl) {
+			padding: vw(15);
+		}
+
+		@include media(xl) {
+			padding: 30px 15px;
+		}
+
+		position: relative;
+
+		display: flex;
+		flex-grow: 1;
+		align-items: center;
+		justify-content: center;
+
+		padding: 15px;
+	}
+
+	&__confirm {
+		@include media(xxl) {
+			max-width: vw(742);
+		}
+
+		@include media(xl) {
+			max-width: 600px;
+		}
+
+		@include media(lg) {
+			max-width: 400px;
+		}
+
+		@include media(sm) {
+			max-width: 100%;
+		}
+
+		max-width: 742px;
+		text-align: center;
+	}
+
+	&__title,
+	&__rules {
+		@include media(xxl) {
+			margin-bottom: vw(30);
+		}
+
+		@include media(xl) {
+			margin-bottom: 20px;
+		}
+
+		@include media(sm) {
+			margin-bottom: 15px;
+		}
+
+		margin-bottom: 30px;
+	}
+
+	&__rules {
+		color: var(--color-text-p);
+	}
+
+	&__buttons {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__cancel {
+		@include media(xxl) {
+			margin-right: vw(20);
+		}
+
+		@include media(xl) {
+			margin-right: 15px;
+		}
+
+		@include media(sm) {
+			margin-right: 10px;
+		}
+
+		margin-right: 20px;
+	}
+
+	&__cancel,
+	&__start {
+		@include media(sm) {
+			flex-basis: 100px;
+			flex-grow: 1;
+		}
+	}
+
+	&__dec {
+		position: absolute;
+
+		&_position {
+			&_top {
+				top: 0;
+			}
+
+			&_bottom {
+				bottom: 0;
+			}
+
+			&_left {
+				left: 0;
+			}
+
+			&_right {
+				right: 0;
+			}
+		}
+	}
+}

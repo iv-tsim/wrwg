@@ -5,6 +5,14 @@
 		width: vw(310);
 	}
 
+	@include media(xl) {
+		width: 232px;
+	}
+
+	@include media(sm) {
+		width: 278px;
+	}
+
 	width: 310px;
 	text-align: center;
 
@@ -14,6 +22,14 @@
 				&__img {
 					@include media(xxl) {
 						width: vw(300);
+					}
+
+					@include media(xl) {
+						width: 225px;
+					}
+
+					@include media(sm) {
+						width: 140px;
 					}
 
 					width: 300px;
@@ -27,6 +43,18 @@
 			width: vw(108);
 		}
 
+		@include media(xl) {
+			width: 82px;
+		}
+
+		@include media(lg) {
+			width: 75px;
+		}
+
+		@include media(sm) {
+			width: 140px;
+		}
+
 		width: 108px;
 		margin-bottom: 20px;
 		transition: 0.6s width;
@@ -35,6 +63,14 @@
 	&__name {
 		@include media(xxl) {
 			max-width: vw(163);
+		}
+
+		@include media(xl) {
+			max-width: 130px;
+		}
+
+		@include media(sm) {
+			max-width: 110px;
 		}
 
 		width: 100%;

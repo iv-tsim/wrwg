@@ -1,11 +1,11 @@
+import { Typography } from './'
+
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ITypographyProps } from './'
 
-import { Typography } from './'
-
 const meta: Meta<ITypographyProps> = {
 	component: Typography,
-	title: 'UI/Typography',
+	title: 'UI/typography',
 	tags: ['autodocs'],
 	parameters: {
 		backgrounds: {
@@ -64,6 +64,14 @@ export const Menu: Story = {
 		children: 'menu Lorem, ipsum dolor.',
 	},
 	name: 'menu',
+}
+
+export const Text: Story = {
+	args: {
+		variant: 'text',
+		children: 'boldText Lorem, ipsum dolor.',
+	},
+	name: 'text',
 }
 
 export const BoldText: Story = {

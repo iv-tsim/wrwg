@@ -1,0 +1,14 @@
+.header {
+	@include media(xxl) {
+		padding-top: vw(30);
+	}
+
+	@include media(xl) {
+		padding-top: 20px;
+	}
+
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	padding-top: 30px;
+}

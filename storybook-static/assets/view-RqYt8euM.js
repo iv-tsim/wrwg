@@ -1,0 +1,1 @@
+import{j as s}from"./jsx-runtime-vNq4Oc-g.js";import{c as r}from"./index-EtqCS5in.js";const e="_button_4tcjx_1",c={button:e},o=({className:t,...n})=>s.jsx("button",{...n,className:r(c.button,t)});try{o.displayName="QuestionButton",o.__docgenInfo={description:"",displayName:"QuestionButton",props:{}}}catch{}export{o as Q};

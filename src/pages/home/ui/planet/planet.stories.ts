@@ -1,13 +1,13 @@
+import { Planet } from './'
+
 import type { Meta, StoryObj } from '@storybook/react'
 import type { IPlanetProps } from './'
 
-import { Planet } from './'
-
-import mercuryUrl from '@assets/img/planets/mercury.png'
+import { PlanetMercuryImage } from '@assets/img/planets'
 
 const meta: Meta<IPlanetProps> = {
 	component: Planet,
-	title: 'Pages/home/Planet',
+	title: 'Pages/home/planet',
 	tags: ['autodocs'],
 }
 
@@ -15,9 +15,9 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const MainDirectionLeft: Story = {
+export const Default: Story = {
 	args: {
-		imageUrl: mercuryUrl,
+		imageUrl: PlanetMercuryImage,
 		to: '#',
 		title: 'Меркурий',
 		style: {
@@ -25,5 +25,5 @@ export const MainDirectionLeft: Story = {
 		},
 		mobileTitlePosition: 'right',
 	},
-	name: 'main',
+	name: 'default',
 }

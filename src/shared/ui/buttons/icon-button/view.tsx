@@ -1,11 +1,14 @@
-import { TDefaultButtonProps } from '@/shared/model'
-import { FC } from 'react'
+import { Typography } from '../../typography'
+import { IconWithLines, type IIconWithLinesProps } from '../../icons'
 import cn from 'classnames'
 
-import css from './styles.module.scss'
-import { Typography } from '../../typography'
+import type { ButtonHTMLAttributes, FC } from 'react'
 
-export interface IconButtonProps extends TDefaultButtonProps {
+import css from './styles.module.scss'
+
+export interface IconButtonProps
+	extends ButtonHTMLAttributes<HTMLButtonElement>,
+		Pick<IIconWithLinesProps, 'hideContent'> {
 	iconId?: string
 	imageUrl?: string
 	isReversed?: boolean
@@ -17,6 +20,7 @@ export const IconButton: FC<IconButtonProps> = ({
 	className,
 	children,
 	isReversed = false,
+	hideContent,
 	...props
 }) => {
 	return (
@@ -24,47 +28,15 @@ export const IconButton: FC<IconButtonProps> = ({
 			className={cn(css.button, className, {
 				[css.button_direction_default]: !isReversed,
 				[css.button_direction_reversed]: isReversed,
-				[css.button_icon_with]: iconId,
-				[css.button_icon_without]: imageUrl,
 			})}
 			{...props}
 		>
-			<div className={css.button__icon}>
-				{iconId && (
-					<svg className={css.button__img}>
-						<use xlinkHref={`#${iconId}`} />
-					</svg>
-				)}
-				{imageUrl && <img src={imageUrl} className={css.button__img} />}
-				<span
-					className={cn(
-						css.button__line,
-						css.button__line_orientation_horizontal,
-						css.button__line_position_top
-					)}
-				/>
-				<span
-					className={cn(
-						css.button__line,
-						css.button__line_orientation_horizontal,
-						css.button__line_position_bottom
-					)}
-				/>
-				<span
-					className={cn(
-						css.button__line,
-						css.button__line_orientation_vertical,
-						css.button__line_position_left
-					)}
-				/>
-				<span
-					className={cn(
-						css.button__line,
-						css.button__line_orientation_vertical,
-						css.button__line_position_right
-					)}
-				/>
-			</div>
+			<IconWithLines
+				iconId={iconId}
+				imageUrl={imageUrl}
+				className={css.button__img}
+				hideContent={hideContent}
+			/>
 			<Typography as='span' variant='menu' className={css.button__text}>
 				{children}
 			</Typography>

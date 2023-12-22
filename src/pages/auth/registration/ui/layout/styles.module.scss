@@ -3,15 +3,46 @@
 		padding: vw(110) 0;
 	}
 
+	@include media(xl) {
+		padding: 130px 0;
+	}
+
+	@include media(lg) {
+		padding: 110px 0;
+	}
+
+	@include media(sm) {
+		padding: 90px 0;
+	}
+
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	padding: 110px 0;
 
+	&_adaptive {
+		&_unique {
+			@include media(sm) {
+				min-height: 860px;
+				padding-bottom: 40px;
+			}
+		}
+	}
+
 	&__planet {
 		@include media(xxl) {
 			bottom: vw(-258);
 			width: vw(400);
+		}
+
+		@include media(xl) {
+			bottom: -136px;
+			width: 300px;
+		}
+
+		@include media(lg) {
+			bottom: -93px;
+			width: 200px;
 		}
 
 		position: absolute;
@@ -26,6 +57,10 @@
 .header {
 	@include media(xxl) {
 		padding-top: vw(30);
+	}
+
+	@include media(xl) {
+		padding-top: 20px;
 	}
 
 	position: absolute;
@@ -64,11 +99,19 @@
 
 	&__bottom {
 		@include media(xxl) {
-			transform: translateY(#{vw(70)});
+			transform: translateY(#{vw(80)});
+		}
+
+		@include media(xl) {
+			transform: translateY(50px);
+		}
+
+		@include media(sm) {
+			transform: translateY(30px);
 		}
 
 		bottom: 0;
-		transform: translateY(70px);
+		transform: translateY(80px);
 		display: flex;
 		justify-content: center;
 	}

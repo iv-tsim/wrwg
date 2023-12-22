@@ -12,6 +12,7 @@
 	}
 
 	@include media(sm) {
+		padding: 12px 40px;
 		font-size: 14px;
 	}
 
@@ -39,11 +40,19 @@
 		0.3s color,
 		0.3s background-image;
 
+	&_padding {
+		&_shrink {
+			@include media(sm) {
+				padding: 12px 10px;
+			}
+		}
+	}
+
 	&_variant {
 		&_primary {
 			color: var(--color-text-primary);
 			background-color: var(--color-elements-secondary);
-			background-image: url('../../../../assets/img/button/background_light_button.png');
+			background-image: url('../../../assets/img/button/background_light.png');
 
 			&:disabled {
 				cursor: not-allowed;
@@ -65,26 +74,26 @@
 		&_secondary {
 			color: var(--color-text-secondary);
 			background-color: var(--color-elements-primary);
-			background-image: url('../../../../assets/img/button/background_dark_button.png');
+			background-image: url('../../../assets/img/button/background_dark.png');
 
 			&:disabled {
 				cursor: not-allowed;
 				color: var(--color-text-disabled);
 				background-color: var(--color-elements-disabled);
-				background-image: url('../../../../assets/img/button/background_light_button.png');
+				background-image: url('../../../assets/img/button/background_light.png');
 			}
 
 			&:not(&:disabled) {
 				&:hover {
 					color: var(--color-text-primary);
 					background-color: var(--color-elements-secondary);
-					background-image: url('../../../../assets/img/button/background_light_button.png');
+					background-image: url('../../../assets/img/button/background_light.png');
 				}
 
 				&:active {
 					color: var(--color-text-primary);
 					background-color: var(--color-elements-white-grey);
-					background-image: url('../../../../assets/img/button/background_light_button.png');
+					background-image: url('../../../assets/img/button/background_light.png');
 				}
 			}
 		}
@@ -109,10 +118,30 @@
 			}
 		}
 
-		&_transparent {
+		&_transparentLight {
 			color: var(--color-text-secondary);
 			background-color: transparent;
 			border-color: var(--color-elements-secondary);
+
+			&:disabled {
+				cursor: not-allowed;
+				color: var(--color-text-disabled);
+				border-color: var(--color-elements-disabled);
+			}
+
+			&:not(&:disabled) {
+				&:hover,
+				&:active {
+					color: var(--color-text-tertiary);
+					border-color: var(--color-elements-tertiary);
+				}
+			}
+		}
+
+		&_transparentDark {
+			color: var(--color-text-primary);
+			background-color: transparent;
+			border-color: var(--color-elements-primary);
 
 			&:disabled {
 				cursor: not-allowed;

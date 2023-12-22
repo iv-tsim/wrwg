@@ -1,11 +1,11 @@
+import { CloseButton } from './'
+
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ICloseButtonProps } from './'
 
-import { CloseButton } from './'
-
 const meta: Meta<ICloseButtonProps> = {
 	component: CloseButton,
-	title: 'UI/buttons/CloseButton',
+	title: 'UI/buttons/close-button',
 	tags: ['autodocs'],
 }
 
@@ -13,32 +13,32 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const MainLight: Story = {
+export const VariantLight: Story = {
 	args: {
 		variant: 'light',
 	},
-	name: 'main/light',
+	name: 'variant-light',
 }
 
-export const MainLightDisabled: Story = {
+export const VariantLightDisabled: Story = {
 	args: {
 		variant: 'light',
 		disabled: true,
 	},
-	name: 'main/light/disabled',
+	name: 'variant-light/disabled',
 }
 
-export const MainDark: Story = {
+export const VariantDark: Story = {
 	args: {
 		variant: 'dark',
 	},
-	name: 'main/dark',
+	name: 'variant-dark',
 }
 
-export const MainDarkDisabled: Story = {
+export const VariantDarkDisabled: Story = {
 	args: {
 		variant: 'dark',
 		disabled: true,
 	},
-	name: 'main/dark/disabled',
+	name: 'variant-dark/disabled',
 }

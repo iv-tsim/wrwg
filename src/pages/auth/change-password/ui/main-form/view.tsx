@@ -1,12 +1,15 @@
 import { Input, MainButton } from '@/shared/ui'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { TMainSchemaFields, mainSchema } from '../../model/mainSchema'
-import { usePasswordSet } from '../../api/'
+import { mainSchema } from '../../model/main-schema'
 import { useAuthResetPasswordState } from '../../model'
-import { callErrorToast } from '@/shared/helpers'
 import { useNavigate } from 'react-router'
-import { routesPath } from '@/shared/lib'
+import { routesPath } from '@/shared/routing'
+import { useMutation } from '@tanstack/react-query'
+import { api } from '@/shared/api'
+import cn from 'classnames'
+
+import type { TMainSchemaFields } from '../../model/main-schema'
 
 import css from './styles.module.scss'
 
@@ -23,18 +26,16 @@ export const MainForm = () => {
 		mode: 'onBlur',
 	})
 
-	const passwordSetMutation = usePasswordSet()
+	const passwordSetMutation = useMutation({
+		mutationFn: api.changePassword.set,
+		onSuccess: () => navigate(routesPath.auth_login),
+	})
 
-	const handleFormSubmit = handleSubmit(async ({ password }) => {
-		try {
-			await passwordSetMutation.mutateAsync({
-				email,
-				newPassword: password,
-			})
-			navigate(routesPath.auth_login)
-		} catch (error) {
-			callErrorToast(error)
-		}
+	const handleFormSubmit = handleSubmit(({ password }) => {
+		passwordSetMutation.mutate({
+			email,
+			newPassword: password,
+		})
 	})
 
 	const handleCancelButtonClick = () => {
@@ -43,33 +44,37 @@ export const MainForm = () => {
 
 	return (
 		<form action='#' className={css.form} onSubmit={handleFormSubmit}>
-			<Input
-				placeholder='Новый пароль'
-				className={css.form__input}
-				error={errors.password?.message}
-				type='password'
-				{...register('password')}
-			/>
-			<Input
-				placeholder='повтор пароля'
-				className={css.form__input}
-				error={errors.password_confirm?.message}
-				type='password'
-				{...register('password_confirm')}
-			/>
+			<div className={css.form__main}>
+				<Input
+					placeholder='Новый пароль'
+					className={css.form__input}
+					error={errors.password?.message}
+					type='password'
+					{...register('password')}
+				/>
+				<Input
+					placeholder='повтор пароля'
+					className={css.form__input}
+					error={errors.password_confirm?.message}
+					type='password'
+					{...register('password_confirm')}
+				/>
+			</div>
 			<div className={css.form__bottom}>
 				<MainButton
-					variant='transparent'
-					className={css.form__cancel}
+					variant='transparent-light'
+					className={cn(css.form__cancel, css.form__button)}
 					type='button'
 					onClick={handleCancelButtonClick}
+					shrinkPaddingMobile={true}
 				>
 					отмена
 				</MainButton>
 				<MainButton
-					className={css.form__submit}
+					className={cn(css.form__submit, css.form__button)}
 					type='submit'
 					disabled={passwordSetMutation.isPending}
+					shrinkPaddingMobile={true}
 				>
 					сохранить
 				</MainButton>

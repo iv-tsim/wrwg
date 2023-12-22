@@ -1,18 +1,27 @@
-import { FC, useLayoutEffect, useRef, useState } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
+import { useQuery } from '@tanstack/react-query'
+import { GET_USER_KEY } from '@/shared/config'
+import { api } from '@/shared/api'
 import cn from 'classnames'
+
+import type { FC } from 'react'
 
 import css from './styles.module.scss'
 
-import earthUrl from '@assets/img/planets/earth.png'
-import orbitUrl from '@assets/img/home/orbit.png'
+import { EarthHomeImage } from '@/shared/assets/img/home'
 
 export const Earth: FC<IWithClassname> = ({ className }) => {
-	const orbitRef = useRef<HTMLImageElement>(null)
+	const earthRef = useRef<HTMLImageElement>(null)
 	const [rect, setRect] = useState<DOMRect | null>(null)
 	const [degree, setDegree] = useState<number>(0)
 
+	const { data, isLoading } = useQuery({
+		queryKey: GET_USER_KEY,
+		queryFn: api.user.get,
+	})
+
 	useLayoutEffect(() => {
-		const { current: orbitImage } = orbitRef
+		const { current: orbitImage } = earthRef
 
 		if (!orbitImage) return
 
@@ -25,10 +34,10 @@ export const Earth: FC<IWithClassname> = ({ className }) => {
 		return () => {
 			resizeObserver.unobserve(document.body)
 		}
-	}, [orbitRef])
+	}, [earthRef])
 
 	useLayoutEffect(() => {
-		const { current: orbitImage } = orbitRef
+		const { current: orbitImage } = earthRef
 
 		if (!orbitImage || !rect) return
 
@@ -51,21 +60,20 @@ export const Earth: FC<IWithClassname> = ({ className }) => {
 	}, [rect])
 
 	return (
-		<div className={cn(css.earth, className)}>
-			<img
-				src={earthUrl}
-				alt='earth'
-				className={css.earth__planet}
-				ref={orbitRef}
-			/>
-			<img
-				src={orbitUrl}
-				alt='orbit'
+		<div
+			className={cn(css.earth, className, {
+				[css.earth_status_loading]: isLoading,
+			})}
+		>
+			<div
 				className={css.earth__orbit}
 				style={{
 					transform: `translate(-50%, -50%) rotate(${degree}deg)`,
 				}}
-			/>
+			>
+				<img src={data?.team.image.mainPage} alt={data?.team.name} className={css.earth__ship} />
+			</div>
+			<img src={EarthHomeImage} alt='earth' className={css.earth__planet} ref={earthRef} />
 		</div>
 	)
 }

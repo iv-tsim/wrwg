@@ -10,4 +10,3 @@ interface IError {
 		attr: string
 	}[]
 }
-

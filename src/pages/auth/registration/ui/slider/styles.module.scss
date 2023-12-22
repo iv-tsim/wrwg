@@ -1,17 +1,29 @@
 .wrapper {
-	@include media(xxl) {
-		padding-right: vw(30);
-		padding-left: vw(30);
+	@include media(lg) {
+		transform: translateX(-189px);
+		width: calc(100% + 389px);
+	}
+
+	@include media(sm) {
+		transform: translateX(0);
+		width: auto;
 	}
 
 	position: relative;
-	padding-right: 30px;
-	padding-left: 30px;
 
 	&__circle {
 		@include media(xxl) {
 			width: vw(310);
 			height: vw(310);
+		}
+
+		@include media(xl) {
+			width: 232px;
+			height: 232px;
+		}
+
+		@include media(sm) {
+			display: none;
 		}
 
 		width: 310px;
@@ -21,6 +33,10 @@
 	}
 
 	&__content {
+		@include media(sm) {
+			justify-content: center;
+		}
+
 		position: relative;
 		z-index: 1;
 
@@ -33,6 +49,11 @@
 		@include media(xxl) {
 			left: vw(30);
 			width: calc(100% - #{vw(60)});
+		}
+
+		@include media(xl) {
+			left: 20px;
+			width: calc(100% - 40px);
 		}
 
 		position: absolute;
@@ -51,18 +72,12 @@
 .main {
 	$p: &;
 
-	@include media(xxl) {
-		height: vw(389);
-	}
-
 	position: relative;
 	z-index: 1;
 
 	display: flex;
 	align-items: center;
 	justify-content: center;
-
-	height: 389px;
 
 	&__border {
 		align-self: stretch;
@@ -73,6 +88,18 @@
 			width: vw(460);
 			margin-right: vw(40);
 			margin-left: vw(40);
+		}
+
+		@include media(xl) {
+			width: 300px;
+			margin-right: 50px;
+			margin-left: 50px;
+		}
+
+		@include media(sm) {
+			width: 230px;
+			margin-right: 0;
+			margin-left: 0;
 		}
 
 		position: relative;
@@ -103,7 +130,8 @@
 
 		transition:
 			0.6s left,
-			0.6s transform;
+			0.6s transform,
+			0.6s opacity;
 
 		&_status {
 			&_active {
@@ -111,11 +139,19 @@
 			}
 
 			&_prev {
+				@include media(lg) {
+					opacity: 0;
+				}
+
 				left: 0;
 				transform: translate(0, -50%);
 			}
 
 			&_next {
+				@include media(lg) {
+					opacity: 0;
+				}
+
 				left: 100%;
 				transform: translate(-100%, -50%);
 
@@ -130,6 +166,29 @@
 		&Wrapper {
 			position: relative;
 			height: auto;
+		}
+	}
+}
+
+.arrow {
+	@include media(sm) {
+		position: absolute;
+		z-index: 2;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	&_direction {
+		&_left {
+			@include media(sm) {
+				left: calc(50% - 120px);
+			}
+		}
+
+		&_right {
+			@include media(sm) {
+				right: calc(50% - 120px);
+			}
 		}
 	}
 }

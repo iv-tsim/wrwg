@@ -25,7 +25,7 @@
 	appearance: none;
 	background: none;
 	background-color: var(--color-elements-tertiary);
-	background-image: url('../../../../assets/img/button/background_light_button.png');
+	background-image: url('../../../assets/img/button/background_ultra-light.png');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -37,7 +37,26 @@
 
 	&:disabled {
 		cursor: not-allowed;
-		opacity: 0.7;
+		transform: scale(0.9);
+		background-color: var(--color-elements-disabled);
+
+		#{$p} {
+			&__corner {
+				fill: var(--color-elements-disabled-dark);
+			}
+
+			&__line {
+				border-color: var(--color-elements-disabled-dark);
+			}
+
+			&__text {
+				color: var(--color-elements-disabled-dark);
+			}
+
+			&__content {
+				color: var(--color-text-disabled);
+			}
+		}
 	}
 
 	&:not(&:disabled) {
@@ -93,6 +112,8 @@
 
 		border-right: 3px solid var(--color-elements-primary);
 
+		transition: 0.3s border-color;
+
 		&_position {
 			&_left {
 				left: 0;
@@ -107,38 +128,54 @@
 	&__corner {
 		@include media(xxl) {
 			width: vw(16);
+			height: vw(16);
 		}
 
 		@include media(xl) {
 			width: 9px;
+			height: 9px;
 		}
 
 		position: absolute;
+
 		display: block;
+
 		width: 16px;
+		height: 16px;
+
+		fill: var(--color-elements-primary);
+
+		transition: 0.3s fill;
 
 		&_position {
-			&_topLeft {
+			&_top {
 				top: 0;
-				left: 0;
 			}
 
-			&_topRight {
-				top: 0;
+			&_right {
 				right: 0;
+			}
+
+			&_bottom {
+				bottom: 0;
+			}
+
+			&_left {
+				left: 0;
+			}
+		}
+
+		&_rotate {
+			&_90 {
 				transform: rotate(90deg);
 			}
 
-			&_bottomLeft {
-				bottom: 0;
-				left: 0;
-				transform: rotate(-90deg);
+			&_180 {
+				transform: rotate(180deg);
 			}
 
-			&_bottomRight {
-				right: 0;
-				bottom: 0;
-				transform: rotate(180deg);
+			&_270 {
+				transform: rotate(270deg);
 			}
 		}
 	}
@@ -163,6 +200,8 @@
 		color: var(--color-elements-primary);
 		text-transform: uppercase;
 		letter-spacing: 0.92px;
+
+		transition: 0.3s color;
 
 		&_position {
 			&_topLeft {
@@ -252,5 +291,7 @@
 		color: var(--color-text-primary);
 		text-transform: uppercase;
 		letter-spacing: 3.22px;
+
+		transition: 0.3s color;
 	}
 }

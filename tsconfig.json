@@ -18,8 +18,9 @@
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["src/*"],
-			"@assets/*": ["src/assets/*"]
-		}
+			"@assets/*": ["src/shared/assets/*"]
+		},
+		"verbatimModuleSyntax": true
 	},
 	"include": ["src", "index.d.ts", "vite-env.d.ts", "shared-kernel.d.ts"]
 }

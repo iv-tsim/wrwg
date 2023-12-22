@@ -1,15 +1,14 @@
-import { routesPath } from '@/shared/lib'
+import { routesPath } from '@/shared/routing'
 import { Input, MainButton, Typography } from '@/shared/ui'
 import { useNavigate } from 'react-router'
-import {
-	TEmailFields,
-	emailSchema,
-	useAuthResetPasswordState,
-} from '../../model'
+import { emailSchema, useAuthResetPasswordState } from '../../model'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
-import { usePasswordReset } from '../../api/'
-import { callErrorToast } from '@/shared/helpers'
+import { useMutation } from '@tanstack/react-query'
+import { api } from '@/shared/api'
+import cn from 'classnames'
+
+import type { TEmailFields } from '../../model'
 
 import css from './styles.module.scss'
 
@@ -19,7 +18,13 @@ export const EmailForm = () => {
 
 	const navigate = useNavigate()
 
-	const passwordResetMutation = usePasswordReset()
+	const passwordResetMutation = useMutation({
+		mutationFn: api.changePassword.reset,
+		onSuccess: (_, variables) => {
+			setEmail(variables.email)
+			setStep('code')
+		},
+	})
 
 	const {
 		register,
@@ -34,29 +39,18 @@ export const EmailForm = () => {
 		navigate(routesPath.auth_login)
 	}
 
-	const handleFormSubmit = handleSubmit(async ({ email }) => {
-		try {
-			await passwordResetMutation.mutateAsync({
-				email,
-			})
-			setEmail(email)
-			setStep('code')
-		} catch (error) {
-			callErrorToast(error)
-		}
+	const handleFormSubmit = handleSubmit(({ email }) => {
+		passwordResetMutation.mutate({
+			email,
+		})
 	})
 
 	return (
 		<div className={css.wrapper}>
 			<Typography variant='text' className={css.wrapper__text}>
-				Введите почту, на которую зарегистрирован аккаунт, на нее придет код для
-				сброса пароля
+				Введите почту, на которую зарегистрирован аккаунт, на нее придет код для сброса пароля
 			</Typography>
-			<form
-				action='#'
-				className={css.wrapper__form}
-				onSubmit={handleFormSubmit}
-			>
+			<form action='#' className={css.wrapper__form} onSubmit={handleFormSubmit}>
 				<Input
 					placeholder='Межгалактическая почта'
 					error={errors.email?.message}
@@ -67,15 +61,17 @@ export const EmailForm = () => {
 					<MainButton
 						type='button'
 						onClick={handleCancelButtonClick}
-						variant='transparent'
-						className={css.wrapper__cancel}
+						variant='transparent-light'
+						className={cn(css.wrapper__button, css.wrapper__cancel)}
+						shrinkPaddingMobile={true}
 					>
 						отмена
 					</MainButton>
 					<MainButton
 						type='submit'
-						className={css.wrapper__submit}
+						className={cn(css.wrapper__button, css.wrapper__submit)}
 						disabled={passwordResetMutation.isPending}
+						shrinkPaddingMobile={true}
 					>
 						Отправить
 					</MainButton>

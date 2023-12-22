@@ -1,0 +1,37 @@
+.wrapper {
+	@include media(xxl) {
+		padding: vw(21) vw(30);
+	}
+
+	@include media(xl) {
+		padding: 23px 30px;
+	}
+
+	@include media(lg) {
+		padding: 18px 20px;
+	}
+
+	@include media(sm) {
+		padding: 16px 20px;
+	}
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-between;
+
+	padding: 21px 30px;
+
+	background-color: var(--color-elements-stars-background);
+
+	&__text {
+		@include media(xxl) {
+			margin-right: vw(30);
+		}
+
+		@include media(xl) {
+			margin-right: 20px;
+		}
+
+		margin-right: 30px;
+	}
+}

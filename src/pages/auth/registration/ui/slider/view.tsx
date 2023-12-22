@@ -1,12 +1,16 @@
-import { FC, useEffect, useState } from 'react'
-import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
+import { useState } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import { AuthRegisterLayout } from '../layout'
 import { Circle } from '../circle'
 import { Team } from '../team'
 import { ArrowButton, DecorativeBorder, MainButton } from '@/shared/ui'
 import { useRegisterState } from '../../model'
+import { useQuery } from '@tanstack/react-query'
+import { api } from '@/shared/api'
+import { GET_COMPANY_KEY } from '@/shared/config'
 
-import { useGetCompanyInfo } from '@/shared/api'
+import type { FC } from 'react'
+import type { SwiperClass } from 'swiper/react'
 
 import cn from 'classnames'
 
@@ -18,7 +22,10 @@ export const AuthRegistrationSlider: FC = () => {
 	const setStep = useRegisterState(state => state.setStep)
 	const [sliderInstance, setSliderInstance] = useState<SwiperClass | null>(null)
 
-	const { data, isLoading } = useGetCompanyInfo()
+	const { data, isLoading } = useQuery({
+		queryFn: api.company.get,
+		queryKey: GET_COMPANY_KEY,
+	})
 
 	const handlePrevClick = () => {
 		if (!sliderInstance) return
@@ -29,12 +36,6 @@ export const AuthRegistrationSlider: FC = () => {
 		if (!sliderInstance) return
 		sliderInstance.slideNext()
 	}
-
-	useEffect(() => {
-		if (typeof sliderInstance?.realIndex === 'number' && data) {
-			setTeam(data.teams[sliderInstance.realIndex])
-		}
-	}, [setTeam, sliderInstance?.realIndex, data])
 
 	const isDisabled = !data || isLoading
 
@@ -47,23 +48,30 @@ export const AuthRegistrationSlider: FC = () => {
 					</MainButton>
 				),
 				children: (
-					<div className={css.wrapper}>
+					<div className={cn('container', css.wrapper)}>
 						<div className={css.wrapper__slider}>
 							{!isDisabled && (
 								<Swiper
 									spaceBetween={0}
-									slidesPerView={3}
 									centeredSlides={true}
 									loop={true}
 									className={css.slider}
 									speed={600}
 									onSwiper={setSliderInstance}
+									onActiveIndexChange={swiper => {
+										setTeam(data.teams[swiper.realIndex])
+									}}
+									breakpoints={{
+										0: {
+											slidesPerView: 1,
+										},
+										1024: {
+											slidesPerView: 3,
+										},
+									}}
 								>
 									{data.teams.map(team => (
-										<SwiperSlide
-											key={team.id}
-											className={css.slider__slideWrapper}
-										>
+										<SwiperSlide key={team.id} className={css.slider__slideWrapper}>
 											{({ isNext, isPrev, isActive }) => (
 												<Team
 													image={team.image.registration}
@@ -92,19 +100,13 @@ export const AuthRegistrationSlider: FC = () => {
 							/>
 
 							<div className={css.main}>
-								<DecorativeBorder
-									position='left'
-									className={css.main__border}
-								/>
+								<DecorativeBorder position='left' className={css.main__border} />
 
 								<div className={css.main__content}>
 									<Circle className={css.main__circle} />
 								</div>
 
-								<DecorativeBorder
-									position='right'
-									className={css.main__border}
-								/>
+								<DecorativeBorder position='right' className={css.main__border} />
 							</div>
 
 							<ArrowButton

@@ -1,11 +1,13 @@
 import { WithBackground } from '@/shared/layouts'
 import { Logo, Typography } from '@/shared/ui'
+import cn from 'classnames'
+
 import type { FC, ReactNode } from 'react'
 
 import css from './styles.module.scss'
 
-import backgroundUrl from '@assets/img/backgrounds/bg_1.jpg'
-import earthUrl from '@assets/img/planets/earth.png'
+import { BackgroundOneImage } from '@assets/img/backgrounds'
+import { PlanetEarthImage } from '@assets/img/planets'
 
 interface IAuthRegisterLayoutProps {
 	children: {
@@ -13,14 +15,21 @@ interface IAuthRegisterLayoutProps {
 		bottom: ReactNode
 	}
 	title: string
+	uniqueAdaptive?: boolean
 }
 
 export const AuthRegisterLayout: FC<IAuthRegisterLayoutProps> = ({
 	children,
 	title,
+	uniqueAdaptive = false,
 }) => {
 	return (
-		<WithBackground imageUrl={backgroundUrl} className={css.wrapper}>
+		<WithBackground
+			imageUrl={BackgroundOneImage}
+			className={cn(css.wrapper, {
+				[css.wrapper_adaptive_unique]: uniqueAdaptive,
+			})}
+		>
 			<header className={css.header}>
 				<Logo className={css.header__logo} />
 			</header>
@@ -33,7 +42,7 @@ export const AuthRegisterLayout: FC<IAuthRegisterLayoutProps> = ({
 				<div className={css.main__bottom}>{children.bottom}</div>
 			</main>
 
-			<img src={earthUrl} alt='earth' className={css.wrapper__planet} />
+			<img src={PlanetEarthImage} alt='earth' className={css.wrapper__planet} />
 		</WithBackground>
 	)
 }

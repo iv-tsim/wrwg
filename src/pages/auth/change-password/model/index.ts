@@ -1,2 +1,2 @@
 export * from './state'
-export * from './emailSchema'
+export * from './email-schema'

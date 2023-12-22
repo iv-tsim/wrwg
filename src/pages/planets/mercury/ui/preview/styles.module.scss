@@ -1,0 +1,85 @@
+.preview {
+	@include media(xxl) {
+		width: vw(344);
+		clip-path: polygon(calc(100% - #{vw(75)}) 0, 100% #{vw(75)}, 100% 100%, 0 100%, 0 0);
+	}
+
+	@include media(xl) {
+		width: 258px;
+		clip-path: polygon(calc(100% - 55px) 0, 100% 55px, 100% 100%, 0 100%, 0 0);
+	}
+
+	display: flex;
+	flex-direction: column;
+	width: 344px;
+	clip-path: polygon(calc(100% - 75px) 0, 100% 75px, 100% 100%, 0 100%, 0 0);
+
+	&__top {
+		@include media(xxl) {
+			min-height: vw(224);
+			padding: vw(20);
+		}
+
+		@include media(xl) {
+			min-height: 168px;
+			padding: 15px;
+		}
+
+		min-height: 224px;
+		padding: 20px;
+
+		background-color: var(--color-elements-secondary);
+		background-image: url('../../../../../shared/assets/img/mercury/preview-background.png');
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+	}
+
+	&__title {
+		@include media(xxl) {
+			margin-bottom: vw(20);
+		}
+
+		@include media(xl) {
+			margin-bottom: 15px;
+		}
+
+		overflow: hidden;
+		display: -webkit-box;
+
+		margin-bottom: 20px;
+
+		color: var(--color-text-primary);
+		text-overflow: ellipsis;
+
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+	}
+
+	&__description {
+		overflow: hidden;
+		display: -webkit-box;
+
+		color: var(--color-text-p);
+		text-overflow: ellipsis;
+
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 6;
+		line-clamp: 6;
+	}
+
+	&__image {
+		@include media(xxl) {
+			height: vw(159);
+		}
+
+		@include media(xl) {
+			height: 120px;
+		}
+
+		display: block;
+		width: 100%;
+		height: 159px;
+		object-fit: cover;
+	}
+}

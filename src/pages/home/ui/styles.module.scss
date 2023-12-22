@@ -17,14 +17,47 @@
 	}
 
 	&__earth {
+		@include media(xxl) {
+			top: calc(100% - #{vw(110)});
+		}
+
+		@include media(xl) {
+			top: calc(100% - 70px);
+			right: 33.6%;
+		}
+
+		@include media(lg) {
+			right: 22.2%;
+		}
+
+		@include media(sm) {
+			top: calc(100% - 56px);
+			right: auto;
+			left: -10px;
+		}
+
 		position: absolute;
-		top: calc(100% - 100px);
-		right: 28%;
+		top: calc(100% - 110px);
+		right: 35.1%;
 	}
 
 	&__sun {
+		@include media(xxl) {
+			width: vw(371);
+		}
+
+		@include media(xl) {
+			width: 278px;
+		}
+
+		@include media(sm) {
+			top: 14%;
+			left: 32%;
+			width: 150px;
+		}
+
 		position: absolute;
-		top: 27%;
+		top: 27.5%;
 		left: 36.6%;
 		width: 371px;
 	}
@@ -34,24 +67,112 @@
 
 		&_name {
 			&_mercury {
+				@include media(xxl) {
+					width: vw(74);
+				}
+
+				@include media(xl) {
+					top: 50.75%;
+					right: 32.7%;
+					width: 56px;
+				}
+
+				@include media(lg) {
+					top: 52.8%;
+					right: 22%;
+				}
+
+				@include media(sm) {
+					top: auto;
+					right: 38px;
+					bottom: 24.5%;
+					width: 40px;
+				}
+
 				top: 48%;
 				right: 31.6%;
 				width: 74px;
 			}
 
 			&_mars {
+				@include media(xxl) {
+					width: vw(155);
+				}
+
+				@include media(xl) {
+					top: 19.6%;
+					right: 13.8%;
+					width: 115px;
+				}
+
+				@include media(lg) {
+					top: 20.5%;
+					right: 4.5%;
+				}
+
+				@include media(sm) {
+					top: auto;
+					right: -8px;
+					bottom: 43.75%;
+					width: 84px;
+				}
+
 				top: 17.8%;
 				right: 12.9%;
 				width: 155px;
 			}
 
 			&_venus {
+				@include media(xxl) {
+					width: vw(88);
+				}
+
+				@include media(xl) {
+					bottom: 28.5%;
+					left: 27.5%;
+					width: 66px;
+				}
+
+				@include media(lg) {
+					bottom: 26%;
+					left: 26%;
+				}
+
+				@include media(sm) {
+					top: auto;
+					bottom: 28.125%;
+					left: 24px;
+					width: 48px;
+				}
+
 				bottom: 24.5%;
 				left: 26.8%;
 				width: 88px;
 			}
 
 			&_jupiter {
+				@include media(xxl) {
+					width: vw(250);
+				}
+
+				@include media(xl) {
+					top: 12.5%;
+					left: 8.88%;
+					width: 187px;
+				}
+
+				@include media(lg) {
+					top: 13%;
+					left: 4.5%;
+				}
+
+				@include media(sm) {
+					top: auto;
+					bottom: 45%;
+					left: -72px;
+					width: 135px;
+				}
+
 				top: 9.6%;
 				left: 7.3%;
 				width: 250px;

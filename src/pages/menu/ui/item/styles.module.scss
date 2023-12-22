@@ -53,6 +53,30 @@
 		}
 	}
 
+	&_adaptive {
+		&_direction {
+			&_left {
+				#{$p} {
+					&__planet {
+						@include media(sm) {
+							align-self: flex-start;
+						}
+					}
+				}
+			}
+
+			&_right {
+				#{$p} {
+					&__planet {
+						@include media(sm) {
+							align-self: flex-end;
+						}
+					}
+				}
+			}
+		}
+	}
+
 	&_status {
 		&_disabled {
 			pointer-events: none;

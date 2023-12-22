@@ -1,39 +1,36 @@
 import { CommonAuthLayout } from '@/shared/layouts'
-import { useVerifyUser } from '../../api/useVerifyRegistration'
-import { callErrorToast } from '@/shared/helpers'
-import { useRegisterUser } from '../../api'
 import { useRegisterState } from '../../model'
 import { useNavigate } from 'react-router'
-import { routesPath } from '@/shared/lib'
-import { CodeForm } from '@/features'
+import { routesPath } from '@/shared/routing'
+import { CodeForm } from '@/features/forms'
+import { useMutation } from '@tanstack/react-query'
+import { api } from '@/shared/api'
 
 export const AuthRegistrationVerify = () => {
 	const navigate = useNavigate()
 	const info = useRegisterState(state => state.info)
 	const setStep = useRegisterState(state => state.setStep)
 
-	const verifyMutation = useVerifyUser()
-	const registerMutation = useRegisterUser()
+	const verifyMutation = useMutation({
+		mutationFn: api.auth.verifyRegistration,
+		onSuccess: () => {
+			navigate(routesPath.home)
+		},
+	})
+
+	const registerMutation = useMutation({
+		mutationFn: api.auth.register,
+	})
 
 	const handleFormSubmit = async (code: string) => {
-		try {
-			await verifyMutation.mutateAsync({
-				code,
-				email: info!.email,
-			})
-
-			navigate(routesPath.home)
-		} catch (error) {
-			callErrorToast(error)
-		}
+		verifyMutation.mutate({
+			code,
+			email: info!.email,
+		})
 	}
 
-	const handleRetryClick = async () => {
-		try {
-			await registerMutation.mutateAsync(info!)
-		} catch (error) {
-			callErrorToast(error)
-		}
+	const handleRetryClick = () => {
+		registerMutation.mutate(info!)
 	}
 
 	return (

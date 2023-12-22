@@ -1,0 +1,136 @@
+.icon {
+	$p: &;
+
+	@include media(xxl) {
+		width: vw(40);
+		height: vw(40);
+	}
+
+	@include media(xl) {
+		width: 30px;
+		height: 30px;
+	}
+
+	position: relative;
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 40px;
+	height: 40px;
+
+	&_icon {
+		&_with {
+			@include media(xxl) {
+				padding: vw(1);
+			}
+
+			padding: 1px;
+
+			#{$p} {
+				&__img {
+					@include media(xxl) {
+						width: vw(38);
+						height: vw(38);
+					}
+
+					@include media(xl) {
+						width: 28px;
+						height: 28px;
+					}
+
+					width: 38px;
+					height: 38px;
+				}
+			}
+		}
+
+		&_without {
+			@include media(xxl) {
+				padding: vw(3);
+			}
+
+			padding: 3px;
+
+			#{$p} {
+				&__img {
+					@include media(xxl) {
+						width: vw(34);
+						height: vw(34);
+					}
+
+					@include media(xl) {
+						width: 24px;
+						height: 24px;
+					}
+
+					width: 34px;
+					height: 34px;
+				}
+			}
+		}
+	}
+
+	&__line {
+		position: absolute;
+		display: block;
+		border-color: inherit;
+
+		&_orientation {
+			&_horizontal {
+				@include media(xxl) {
+					width: vw(28);
+				}
+
+				@include media(xl) {
+					width: 21px;
+				}
+
+				left: 50%;
+				transform: translateX(-50%);
+
+				width: 28px;
+
+				border-top-style: solid;
+				border-top-width: 1px;
+			}
+
+			&_vertical {
+				@include media(xxl) {
+					height: vw(28);
+				}
+
+				@include media(xl) {
+					height: 21px;
+				}
+
+				top: 50%;
+				transform: translateY(-50%);
+
+				height: 28px;
+
+				border-left-style: solid;
+				border-left-width: 1px;
+			}
+		}
+
+		&_position {
+			&_top {
+				top: 0;
+			}
+
+			&_right {
+				right: 0;
+			}
+
+			&_bottom {
+				bottom: 0;
+			}
+
+			&_left {
+				left: 0;
+			}
+		}
+	}
+}

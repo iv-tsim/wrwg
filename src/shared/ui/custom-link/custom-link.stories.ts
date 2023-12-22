@@ -1,11 +1,11 @@
+import { CustomLink } from './'
+
 import type { Meta, StoryObj } from '@storybook/react'
 import type { ILinkProps } from './'
 
-import { CustomLink } from './'
-
 const meta: Meta<ILinkProps> = {
 	component: CustomLink,
-	title: 'UI/CustomLink',
+	title: 'UI/custom-link',
 	tags: ['autodocs'],
 }
 
@@ -13,9 +13,9 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const CustomLinkDefault: Story = {
+export const Default: Story = {
 	args: {
 		children: 'Забыт пароль?',
 	},
-	name: 'custom-link',
+	name: 'default',
 }

@@ -1,12 +1,12 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import type { IDecorativeBorderProps } from './'
-
 import { DecorativeBorder } from './'
 import { TextButton } from '../buttons'
 
+import type { Meta, StoryObj } from '@storybook/react'
+import type { IDecorativeBorderProps } from './'
+
 const meta: Meta<IDecorativeBorderProps> = {
 	component: DecorativeBorder,
-	title: 'Pages/auth/DecorativeBorder',
+	title: 'Pages/auth/decorative-border',
 	tags: ['autodocs'],
 }
 
@@ -14,24 +14,24 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const BorderDefaultLeft: Story = {
+export const Left: Story = {
 	args: {
 		position: 'left',
 	},
-	name: 'border/position/left',
+	name: 'position-left',
 }
 
-export const BorderDefaultLeftWithChildren: Story = {
+export const LeftWithChildren: Story = {
 	args: {
 		position: 'left',
 		children: <TextButton iconId='arrow-back'>Назад</TextButton>,
 	},
-	name: 'border/position/left/with-children',
+	name: 'position-left/with-children',
 }
 
-export const BorderDefaultRight: Story = {
+export const Right: Story = {
 	args: {
 		position: 'right',
 	},
-	name: 'border/position/right',
+	name: 'position-right',
 }

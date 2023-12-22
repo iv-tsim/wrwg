@@ -10,25 +10,21 @@ export default defineConfig(({ mode }) => {
 			port: 8000,
 		},
 		plugins: [react()],
-		define: {
-			APP_ENV: env.APP_ENV,
-		},
 		base: env.VITE_BASE,
 		resolve: {
 			alias: {
 				'@': path.resolve(__dirname, './src'),
-				'@assets': path.resolve(__dirname, './src/assets'),
+				'@assets': path.resolve(__dirname, './src/shared/assets'),
 			},
 		},
 		css: {
 			preprocessorOptions: {
 				scss: {
 					additionalData: `
-          @use "./src/assets/styles/snippets" as *;
+          @use "./src/app/styles/snippets" as *;
           `,
 				},
 			},
 		},
 	}
 })
-

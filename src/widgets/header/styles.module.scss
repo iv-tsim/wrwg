@@ -1,0 +1,70 @@
+.header {
+	@include media(xxl) {
+		padding-top: vw(30);
+	}
+
+	@include media(xl) {
+		padding-top: 20px;
+	}
+
+	padding-top: 30px;
+
+	&__container {
+		position: relative;
+		display: flex;
+		justify-content: center;
+	}
+
+	&__left,
+	&__right {
+		@include media(sm) {
+			top: 0;
+			bottom: auto;
+		}
+
+		position: absolute;
+		bottom: 0;
+		display: flex;
+		align-items: center;
+	}
+
+	&__right {
+		right: 0;
+	}
+
+	&__left {
+		left: 0;
+	}
+
+	&__journal {
+		@include media(xxl) {
+			margin-right: vw(80);
+		}
+
+		@include media(xl) {
+			margin-right: 60px;
+		}
+
+		@include media(lg) {
+			margin-right: 40px;
+		}
+
+		@include media(sm) {
+			margin-right: 5px;
+		}
+
+		margin-right: 80px;
+	}
+
+	&__menu {
+		@include media(sm) {
+			margin-right: 5px;
+		}
+	}
+
+	&__rating {
+		@include media-up(md) {
+			display: none;
+		}
+	}
+}

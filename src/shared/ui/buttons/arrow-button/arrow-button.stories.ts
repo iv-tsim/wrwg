@@ -1,11 +1,11 @@
+import { ArrowButton } from './'
+
 import type { Meta, StoryObj } from '@storybook/react'
 import type { IArrowButtonProps } from './'
 
-import { ArrowButton } from './'
-
 const meta: Meta<IArrowButtonProps> = {
 	component: ArrowButton,
-	title: 'UI/buttons/ArrowButton',
+	title: 'UI/buttons/arrow-button',
 	tags: ['autodocs'],
 }
 
@@ -13,32 +13,32 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const MainLeft: Story = {
+export const DirectionLeft: Story = {
 	args: {
 		direction: 'left',
 	},
-	name: 'main/left',
+	name: 'direction-left',
 }
 
-export const MainRight: Story = {
+export const DirectionRight: Story = {
 	args: {
 		direction: 'right',
 	},
-	name: 'main/right',
+	name: 'direction-right',
 }
 
-export const MainLeftDisabled: Story = {
+export const DirectionLeftDisabled: Story = {
 	args: {
 		direction: 'left',
 		disabled: true,
 	},
-	name: 'main/left/disabled',
+	name: 'direction-left/disabled',
 }
 
-export const MainRightDisabled: Story = {
+export const DirectionRightDisabled: Story = {
 	args: {
 		direction: 'right',
 		disabled: true,
 	},
-	name: 'main/right/disabled',
+	name: 'direction-right/disabled',
 }

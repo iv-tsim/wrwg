@@ -1,5 +1,5 @@
-import { CommonAuthLayout, RedirectIfLoggedIn } from '@/shared/layouts'
-import { routesPath } from '@/shared/lib'
+import { CommonAuthLayout } from '@/shared/layouts'
+import { routesPath } from '@/shared/routing'
 import { MainButton } from '@/shared/ui'
 import { useNavigate } from 'react-router'
 
@@ -17,24 +17,19 @@ export const Auth = () => {
 	}
 
 	return (
-		<RedirectIfLoggedIn>
-			<CommonAuthLayout title='Авторизация'>
-				<div className={css.wrapper}>
-					<MainButton
-						variant='transparent'
-						className={css.wrapper__button}
-						onClick={handleLoginClick}
-					>
-						уже есть корабль
-					</MainButton>
-					<MainButton
-						className={css.wrapper__button}
-						onClick={handleRegistrationClick}
-					>
-						регистрация
-					</MainButton>
-				</div>
-			</CommonAuthLayout>
-		</RedirectIfLoggedIn>
+		<CommonAuthLayout title='Авторизация'>
+			<div className={css.wrapper}>
+				<MainButton
+					variant='transparent-light'
+					className={css.wrapper__button}
+					onClick={handleLoginClick}
+				>
+					уже есть корабль
+				</MainButton>
+				<MainButton className={css.wrapper__button} onClick={handleRegistrationClick}>
+					регистрация
+				</MainButton>
+			</div>
+		</CommonAuthLayout>
 	)
 }

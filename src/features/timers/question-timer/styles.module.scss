@@ -1,0 +1,50 @@
+.timer {
+	display: flex;
+	align-items: center;
+
+	&__time {
+		@include media(xxl) {
+			min-width: vw(110);
+			margin-right: vw(4);
+		}
+
+		@include media(xl) {
+			min-width: 70px;
+			margin-right: 8px;
+		}
+
+		@include media(lg) {
+			min-width: 62px;
+		}
+
+		@include media(sm) {
+			min-width: 55px;
+		}
+
+		min-width: 110px;
+		margin-right: 4px;
+		color: var(--color-text-primary);
+	}
+
+	&__circle {
+		--angle: calc(3.6deg * var(--progress, 0));
+
+		@include media(xxl) {
+			width: vw(24);
+			height: vw(24);
+		}
+
+		@include media(xl) {
+			width: 15px;
+			height: 15px;
+		}
+
+		width: 24px;
+		height: 24px;
+		background: conic-gradient(
+			var(--color-elements-primary) var(--angle, 0deg),
+			transparent var(--angle, 0deg)
+		);
+		clip-path: circle(50% at 50%);
+	}
+}

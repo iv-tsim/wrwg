@@ -1,21 +1,19 @@
-import type { TDefaultInputProps } from '@/shared/model'
 import { Typography } from '@/shared/ui'
 import { forwardRef } from 'react'
 import cn from 'classnames'
 
+import type { InputHTMLAttributes } from 'react'
+
 import css from './styles.module.scss'
 
-export interface IInputProps extends TDefaultInputProps {
+export interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
 	variant?: 'dark' | 'light'
 	textAlign?: 'center' | 'left'
 	error?: string
 }
 
 export const Input = forwardRef<HTMLInputElement, IInputProps>(
-	(
-		{ variant = 'dark', textAlign = 'center', error, className, ...props },
-		inputRef
-	) => {
+	({ variant = 'dark', textAlign = 'center', error, className, ...props }, inputRef) => {
 		return (
 			<div
 				className={cn(css.wrapper, className, {
@@ -26,12 +24,7 @@ export const Input = forwardRef<HTMLInputElement, IInputProps>(
 					[css.wrapper_status_invalid]: error,
 				})}
 			>
-				<input
-					type='text'
-					className={css.wrapper__input}
-					ref={inputRef}
-					{...props}
-				/>
+				<input type='text' className={css.wrapper__input} ref={inputRef} {...props} />
 				<Typography className={css.wrapper__error} variant='desc'>
 					{error}
 				</Typography>

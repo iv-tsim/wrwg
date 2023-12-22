@@ -1,5 +1,27 @@
 .form {
 	&__input {
+		&:not(:last-child) {
+			@include media(xxl) {
+				margin-bottom: vw(40);
+			}
+
+			@include media(xl) {
+				margin-bottom: 35px;
+			}
+
+			margin-bottom: 40px;
+		}
+	}
+
+	&__main {
+		@include media(xxl) {
+			margin-bottom: vw(60);
+		}
+
+		@include media(xl) {
+			margin-bottom: 35px;
+		}
+
 		margin-bottom: 60px;
 	}
 
@@ -8,10 +30,29 @@
 	}
 
 	&__cancel {
+		@include media(xxl) {
+			margin-right: vw(30);
+		}
+
+		@include media(xl) {
+			margin-right: 20px;
+		}
+
+		@include media(sm) {
+			flex-grow: 1;
+			margin-right: 10px;
+		}
+
 		margin-right: 30px;
 	}
 
 	&__submit {
 		flex-grow: 1;
+	}
+
+	&__button {
+		@include media(sm) {
+			flex-basis: 100px;
+		}
 	}
 }

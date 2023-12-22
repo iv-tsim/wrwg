@@ -1,19 +1,83 @@
 .earth {
+	$p: &;
+
 	@include media(xxl) {
-		width: vw(782);
+		width: vw(350);
 	}
 
-	width: 782px;
+	@include media(xl) {
+		width: 300px;
+	}
+
+	@include media(sm) {
+		width: 200px;
+	}
+
+	width: 350px;
+
+	&_status {
+		&_loading {
+			#{$p} {
+				&__ship {
+					top: 100%;
+				}
+			}
+		}
+	}
 
 	&__planet {
+		position: relative;
+		z-index: 1;
 		display: block;
 		width: 100%;
 	}
 
 	&__orbit {
+		@include media(xxl) {
+			width: vw(610);
+			height: vw(610);
+		}
+
+		@include media(xl) {
+			width: 540px;
+			height: 540px;
+		}
+
+		@include media(sm) {
+			width: 342px;
+			height: 342px;
+		}
+
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		width: 175%;
+
+		width: 610px;
+		height: 610px;
+	}
+
+	&__ship {
+		@include media(xxl) {
+			width: vw(90);
+		}
+
+		@include media(xl) {
+			width: 80px;
+		}
+
+		@include media(sm) {
+			width: 50px;
+		}
+
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+
+		display: block;
+
+		width: 90px;
+
+		transition: 1s top ease-in-out;
 	}
 }
