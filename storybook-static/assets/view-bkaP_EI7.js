@@ -1,1 +1,0 @@
-import{j as s}from"./jsx-runtime-vNq4Oc-g.js";import{c as n}from"./index-EtqCS5in.js";const r="_loading_1dcry_1",i={loading:r},a=({className:o})=>s.jsx("svg",{className:n(i.loading,o),children:s.jsx("use",{xlinkHref:"#loading"})});try{a.displayName="Loading",a.__docgenInfo={description:"",displayName:"Loading",props:{}}}catch{}export{a as L};

@@ -1,7 +1,0 @@
-import{a as i}from"./view-LM96WRVA.js";import"./jsx-runtime-vNq4Oc-g.js";import"./index-4g5l5LRQ.js";import"./_commonjsHelpers-4gQjN7DL.js";import"./view-gYBdl3XL.js";import"./index-EtqCS5in.js";import"./view-spKNhJy4.js";import"./view-0LOCEd2o.js";import"./view-Iv3gSpPf.js";import"./view-qOzfKQ9i.js";import"./view-lJtk3Ayp.js";import"./index-7QY-De8j.js";import"./index-jmm5gWkb.js";import"./view-RqYt8euM.js";import"./view-xU0JADvb.js";import"./view-zwxHqDhm.js";import"./index-VFMbf6KQ.js";import"./view-_5FXXuO_.js";import"./view-x2iUWerP.js";import"./view-g3_YRVwz.js";import"./view-bkaP_EI7.js";import"./view-fTZIWcSj.js";import"./view-QSp54FIO.js";import"./view-S_QH2PG1.js";const y={component:i,title:"Pages/mercury/quiz-preview",tags:["autodocs"]},u={args:{title:"ДОСТУПНАЯ ЗОНА ВЫСАДКИ",description:"Проверим насколько хорошо ты знаком с историей компании. Пройди викторину без ошибок и заработай звезду в персональный рейтинг!"},name:"default"};var t,r,o;u.parameters={...u.parameters,docs:{...(t=u.parameters)==null?void 0:t.docs,source:{originalSource:`{
-  args: {
-    title: 'ДОСТУПНАЯ ЗОНА ВЫСАДКИ',
-    description: 'Проверим насколько хорошо ты знаком с историей компании. Пройди викторину без ошибок и заработай звезду в персональный рейтинг!'
-  },
-  name: 'default'
-}`,...(o=(r=u.parameters)==null?void 0:r.docs)==null?void 0:o.source}}};const O=["Default"];export{u as Default,O as __namedExportsOrder,y as default};
