@@ -15,6 +15,13 @@ import type { FC } from 'react'
 import css from './styles.module.scss'
 
 export const AuthRegistrationForm: FC = () => {
+	const team = useRegisterState(state => state.team)
+	const info = useRegisterState(state => state.info)
+	const setInfo = useRegisterState(state => state.setInfo)
+	const setStep = useRegisterState(state => state.setStep)
+
+	const isMobile = useMobile(1023)
+
 	const {
 		register,
 		formState: { errors },
@@ -22,13 +29,14 @@ export const AuthRegistrationForm: FC = () => {
 	} = useForm<TRegisterFields>({
 		resolver: zodResolver(registerSchema),
 		mode: 'onBlur',
+		defaultValues: {
+			email: info?.email,
+			fullName: info?.fullName,
+			password: info?.password,
+			password_confirm: info?.password,
+			username: info?.username,
+		},
 	})
-
-	const team = useRegisterState(state => state.team)
-	const setInfo = useRegisterState(state => state.setInfo)
-	const setStep = useRegisterState(state => state.setStep)
-
-	const isMobile = useMobile(1023)
 
 	const registerMutation = useMutation({
 		mutationFn: api.auth.register,
